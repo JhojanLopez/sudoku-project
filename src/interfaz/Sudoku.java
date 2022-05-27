@@ -3428,12 +3428,13 @@ public class Sudoku extends javax.swing.JFrame {
     private void jButtonDeshacerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeshacerActionPerformed
         if (!deshacer.empty()) {
 
-            rehacer.push(deshacer.peek());//antes de deshacer una accion ponemos esa accion en la pila de rehacer
-            deshacer.pop().getCampo().setText("");
+            var accion = deshacer.pop();
+            rehacer.push(accion);//antes de deshacer una accion ponemos esa accion en la pila de rehacer
+            accion.getCampo().setText("");
         }
 
         if (deshacer.empty()) {
-            System.out.println("Pila vacia");
+            System.out.println("Pila Deshacer vacia");
         }
     }//GEN-LAST:event_jButtonDeshacerActionPerformed
 
@@ -3443,7 +3444,12 @@ public class Sudoku extends javax.swing.JFrame {
         if (!rehacer.isEmpty()) {
 
             var accion = rehacer.pop();
+            deshacer.push(accion);
             accion.getCampo().setText(accion.getValor());
+        }
+        
+        if (rehacer.empty()) {
+            System.out.println("Pila Rehacer vacia");
         }
     }//GEN-LAST:event_jButtonRehacerActionPerformed
 
@@ -4317,11 +4323,10 @@ public class Sudoku extends javax.swing.JFrame {
 
         for (int f = 0; f < sudokuActual.length; f++) {
             for (int c = 0; c < sudokuActual[0].length; c++) {
-                System.out.println("\nsudoku ["+f+"]"+"["+c+"]:"+
-                sudokuActual[f][c]); 
-           }
+                System.out.println("\nsudoku [" + f + "]" + "[" + c + "]:"
+                        + sudokuActual[f][c]);
+            }
         }
 
-        
     }
 }
