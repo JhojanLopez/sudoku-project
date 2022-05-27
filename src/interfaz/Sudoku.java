@@ -26,12 +26,14 @@ public class Sudoku extends javax.swing.JFrame {
     private String archivoRespuesta;
     private Stack<Accion> deshacer;
     private Stack<Accion> rehacer;
+    private String sudokuActual[][];
 
     public Sudoku() {
         this.archivoConfigPartida = "configuracionPartida.txt";
         this.archivoRespuesta = "respuestaPartida.txt";
         this.deshacer = new Stack<Accion>();
         this.rehacer = new Stack<Accion>();
+        this.sudokuActual = new String[9][9];
         initComponents();
         establecerPartida();
     }
@@ -143,7 +145,7 @@ public class Sudoku extends javax.swing.JFrame {
         jPanelOpciones = new javax.swing.JPanel();
         jButtonDeshacer = new javax.swing.JButton();
         jButtonComprobar = new javax.swing.JButton();
-        jButtonComprobar1 = new javax.swing.JButton();
+        jButtonRehacer = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1397,7 +1399,12 @@ public class Sudoku extends javax.swing.JFrame {
 
         jButtonComprobar.setText("Comprobar");
 
-        jButtonComprobar1.setText("Rehacer");
+        jButtonRehacer.setText("Rehacer");
+        jButtonRehacer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRehacerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelOpcionesLayout = new javax.swing.GroupLayout(jPanelOpciones);
         jPanelOpciones.setLayout(jPanelOpcionesLayout);
@@ -1409,7 +1416,7 @@ public class Sudoku extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButtonComprobar)
                 .addGap(158, 158, 158)
-                .addComponent(jButtonComprobar1)
+                .addComponent(jButtonRehacer)
                 .addGap(38, 38, 38))
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
@@ -1421,7 +1428,7 @@ public class Sudoku extends javax.swing.JFrame {
                 .addGroup(jPanelOpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonDeshacer)
                     .addComponent(jButtonComprobar)
-                    .addComponent(jButtonComprobar1))
+                    .addComponent(jButtonRehacer))
                 .addContainerGap())
         );
 
@@ -1497,7 +1504,7 @@ public class Sudoku extends javax.swing.JFrame {
             } else if (jText1Region1.getText().equals("")) {
                 System.out.println("es vacio");
             }
-        }  
+        }
     }//GEN-LAST:event_jText2Region1KeyTyped
 
     private void jText3Region1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText3Region1KeyTyped
@@ -2549,6 +2556,7 @@ public class Sudoku extends javax.swing.JFrame {
     private void jButtonDeshacerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeshacerActionPerformed
         if (!deshacer.empty()) {
 
+            rehacer.push(deshacer.peek());//antes de deshacer una accion ponemos esa accion en la pila de rehacer
             deshacer.pop().getCampo().setText("");
         }
 
@@ -2556,6 +2564,16 @@ public class Sudoku extends javax.swing.JFrame {
             System.out.println("Pila vacia");
         }
     }//GEN-LAST:event_jButtonDeshacerActionPerformed
+
+    private void jButtonRehacerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRehacerActionPerformed
+        // TODO add your handling code here:
+
+        if (!rehacer.isEmpty()) {
+
+            var accion = rehacer.pop();
+            accion.getCampo().setText(accion.getValor());
+        }
+    }//GEN-LAST:event_jButtonRehacerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2595,8 +2613,8 @@ public class Sudoku extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonComprobar;
-    private javax.swing.JButton jButtonComprobar1;
     private javax.swing.JButton jButtonDeshacer;
+    private javax.swing.JButton jButtonRehacer;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
@@ -2794,6 +2812,7 @@ public class Sudoku extends javax.swing.JFrame {
         jText2Region3.setText(esNumero(caracteres[7]));
         jText3Region3.setText(esNumero(caracteres[8]));
 
+        agregarFilas(1);
         analizarModificacionFila1();
     }
 
@@ -3396,4 +3415,41 @@ public class Sudoku extends javax.swing.JFrame {
         System.out.println(deshacer.toString());//mostramos el estado de la pila
     }
 
+    private void agregarFilas(int fila) {
+
+        switch (fila) {
+            case 1:
+                agregarFila1();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void agregarFila1() {
+
+        sudokuActual[0][0] = jText1Region1.getText();
+        sudokuActual[0][1] = jText2Region1.getText();
+        sudokuActual[0][2] = jText3Region1.getText();
+        sudokuActual[0][3] = jText1Region2.getText();
+        sudokuActual[0][4] = jText2Region2.getText();
+        sudokuActual[0][5] = jText3Region2.getText();
+        sudokuActual[0][6] = jText1Region3.getText();
+        sudokuActual[0][7] = jText2Region3.getText();
+        sudokuActual[0][8] = jText3Region3.getText();
+
+        imprmirSudoku();
+    }
+
+    public void imprmirSudoku() {
+
+        for (int f = 0; f < sudokuActual.length; f++) {
+            for (int c = 0; c < sudokuActual[0].length; c++) {
+                System.out.println("\nsudoku ["+f+"]"+"["+c+"]:"+
+                sudokuActual[f][c]); 
+           }
+        }
+
+        
+    }
 }
