@@ -316,7 +316,7 @@ public class Sudoku extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanelRegion2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanelRegion2.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         jText1Region2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText1Region2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -566,7 +566,7 @@ public class Sudoku extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanelRegion4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanelRegion4.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         jText1Region4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText1Region4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -692,7 +692,7 @@ public class Sudoku extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanelRegion5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanelRegion5.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         jText1Region5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText1Region5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -818,7 +818,7 @@ public class Sudoku extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanelRegion6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanelRegion6.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         jText1Region6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText1Region6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -1068,7 +1068,7 @@ public class Sudoku extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanelRegion8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanelRegion8.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         jText1Region8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText1Region8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -3447,7 +3447,7 @@ public class Sudoku extends javax.swing.JFrame {
             deshacer.push(accion);
             accion.getCampo().setText(accion.getValor());
         }
-        
+
         if (rehacer.empty()) {
             System.out.println("Pila Rehacer vacia");
         }
@@ -3756,7 +3756,7 @@ public class Sudoku extends javax.swing.JFrame {
         jText4Region3.setText(esNumero(caracteres[6]));
         jText5Region3.setText(esNumero(caracteres[7]));
         jText6Region3.setText(esNumero(caracteres[8]));
-
+        agregarFilas(2);
         analizarModificacionFila2();
     }
 
@@ -3824,7 +3824,7 @@ public class Sudoku extends javax.swing.JFrame {
         jText7Region3.setText(esNumero(caracteres[6]));
         jText8Region3.setText(esNumero(caracteres[7]));
         jText9Region3.setText(esNumero(caracteres[8]));
-
+        agregarFilas(3);
         analizarModificacionFila3();
     }
 
@@ -3890,7 +3890,7 @@ public class Sudoku extends javax.swing.JFrame {
         jText1Region6.setText(esNumero(caracteres[6]));
         jText2Region6.setText(esNumero(caracteres[7]));
         jText3Region6.setText(esNumero(caracteres[8]));
-
+        agregarFilas(4);
         analizarModificacionFila4();
     }
 
@@ -3956,7 +3956,7 @@ public class Sudoku extends javax.swing.JFrame {
         jText4Region6.setText(esNumero(caracteres[6]));
         jText5Region6.setText(esNumero(caracteres[7]));
         jText6Region6.setText(esNumero(caracteres[8]));
-
+        agregarFilas(5);
         analizarModificacionFila5();
     }
 
@@ -4022,7 +4022,7 @@ public class Sudoku extends javax.swing.JFrame {
         jText7Region6.setText(esNumero(caracteres[6]));
         jText8Region6.setText(esNumero(caracteres[7]));
         jText9Region6.setText(esNumero(caracteres[8]));
-
+        agregarFilas(6);
         analizarModificacionFila6();
     }
 
@@ -4088,7 +4088,7 @@ public class Sudoku extends javax.swing.JFrame {
         jText1Region9.setText(esNumero(caracteres[6]));
         jText2Region9.setText(esNumero(caracteres[7]));
         jText3Region9.setText(esNumero(caracteres[8]));
-
+        agregarFilas(7);
         analizarModificacionFila7();
     }
 
@@ -4154,7 +4154,7 @@ public class Sudoku extends javax.swing.JFrame {
         jText4Region9.setText(esNumero(caracteres[6]));
         jText5Region9.setText(esNumero(caracteres[7]));
         jText6Region9.setText(esNumero(caracteres[8]));
-
+        agregarFilas(8);
         analizarModificacionFila8();
     }
 
@@ -4220,7 +4220,7 @@ public class Sudoku extends javax.swing.JFrame {
         jText7Region9.setText(esNumero(caracteres[6]));
         jText8Region9.setText(esNumero(caracteres[7]));
         jText9Region9.setText(esNumero(caracteres[8]));
-
+        agregarFilas(9);
         analizarModificacionFila9();
     }
 
@@ -4299,6 +4299,30 @@ public class Sudoku extends javax.swing.JFrame {
             case 1:
                 agregarFila1();
                 break;
+            case 2:
+                agregarFila2();
+                break;
+            case 3:
+                agregarFila3();
+                break;
+            case 4:
+                agregarFila4();
+                break;
+            case 5:
+                agregarFila5();
+                break;
+            case 6:
+                agregarFila6();
+                break;
+            case 7:
+                agregarFila7();
+                break;
+            case 8:
+                agregarFila8();
+                break;
+            case 9:
+                agregarFila9();
+                break;
             default:
                 break;
         }
@@ -4328,5 +4352,118 @@ public class Sudoku extends javax.swing.JFrame {
             }
         }
 
+    }
+
+    private void agregarFila2() {
+        sudokuActual[1][0] = jText4Region1.getText();
+        sudokuActual[1][1] = jText5Region1.getText();
+        sudokuActual[1][2] = jText6Region1.getText();
+        sudokuActual[1][3] = jText4Region2.getText();
+        sudokuActual[1][4] = jText5Region2.getText();
+        sudokuActual[1][5] = jText6Region2.getText();
+        sudokuActual[1][6] = jText4Region3.getText();
+        sudokuActual[1][7] = jText5Region3.getText();
+        sudokuActual[1][8] = jText6Region3.getText();
+
+        imprmirSudoku();
+    }
+
+    private void agregarFila3() {
+        sudokuActual[2][0] = jText7Region1.getText();
+        sudokuActual[2][1] = jText8Region1.getText();
+        sudokuActual[2][2] = jText9Region1.getText();
+        sudokuActual[2][3] = jText7Region2.getText();
+        sudokuActual[2][4] = jText8Region2.getText();
+        sudokuActual[2][5] = jText9Region2.getText();
+        sudokuActual[2][6] = jText7Region3.getText();
+        sudokuActual[2][7] = jText8Region3.getText();
+        sudokuActual[2][8] = jText9Region3.getText();
+
+        imprmirSudoku();
+    }
+
+    private void agregarFila4() {
+        sudokuActual[3][0] = jText1Region4.getText();
+        sudokuActual[3][1] = jText2Region4.getText();
+        sudokuActual[3][2] = jText3Region4.getText();
+        sudokuActual[3][3] = jText1Region5.getText();
+        sudokuActual[3][4] = jText2Region5.getText();
+        sudokuActual[3][5] = jText3Region5.getText();
+        sudokuActual[3][6] = jText1Region6.getText();
+        sudokuActual[3][7] = jText2Region6.getText();
+        sudokuActual[3][8] = jText3Region6.getText();
+
+        imprmirSudoku();
+    }
+
+    private void agregarFila5() {
+        sudokuActual[4][0] = jText4Region4.getText();
+        sudokuActual[4][1] = jText5Region4.getText();
+        sudokuActual[4][2] = jText6Region4.getText();
+        sudokuActual[4][3] = jText4Region5.getText();
+        sudokuActual[4][4] = jText5Region5.getText();
+        sudokuActual[4][5] = jText6Region5.getText();
+        sudokuActual[4][6] = jText4Region6.getText();
+        sudokuActual[4][7] = jText5Region6.getText();
+        sudokuActual[4][8] = jText6Region6.getText();
+
+        imprmirSudoku();
+
+    }
+
+    private void agregarFila6() {
+        sudokuActual[5][0] = jText7Region4.getText();
+        sudokuActual[5][1] = jText8Region4.getText();
+        sudokuActual[5][2] = jText9Region4.getText();
+        sudokuActual[5][3] = jText7Region5.getText();
+        sudokuActual[5][4] = jText8Region5.getText();
+        sudokuActual[5][5] = jText9Region5.getText();
+        sudokuActual[5][6] = jText7Region6.getText();
+        sudokuActual[5][7] = jText8Region6.getText();
+        sudokuActual[5][8] = jText9Region6.getText();
+
+        imprmirSudoku();
+    }
+
+    private void agregarFila7() {
+        sudokuActual[6][0] = jText1Region7.getText();
+        sudokuActual[6][1] = jText2Region7.getText();
+        sudokuActual[6][2] = jText3Region7.getText();
+        sudokuActual[6][3] = jText1Region8.getText();
+        sudokuActual[6][4] = jText2Region8.getText();
+        sudokuActual[6][5] = jText3Region8.getText();
+        sudokuActual[6][6] = jText1Region9.getText();
+        sudokuActual[6][7] = jText2Region9.getText();
+        sudokuActual[6][8] = jText3Region9.getText();
+
+        imprmirSudoku();
+    }
+
+    private void agregarFila8() {
+        sudokuActual[7][0] = jText4Region7.getText();
+        sudokuActual[7][1] = jText5Region7.getText();
+        sudokuActual[7][2] = jText6Region7.getText();
+        sudokuActual[7][3] = jText4Region8.getText();
+        sudokuActual[7][4] = jText5Region8.getText();
+        sudokuActual[7][5] = jText6Region8.getText();
+        sudokuActual[7][6] = jText4Region9.getText();
+        sudokuActual[7][7] = jText5Region9.getText();
+        sudokuActual[7][8] = jText6Region9.getText();
+
+        imprmirSudoku();
+    }
+
+    private void agregarFila9() {
+        sudokuActual[8][0] = jText7Region7.getText();
+        sudokuActual[8][1] = jText8Region7.getText();
+        sudokuActual[8][2] = jText9Region7.getText();
+        sudokuActual[8][3] = jText7Region8.getText();
+        sudokuActual[8][4] = jText8Region8.getText();
+        sudokuActual[8][5] = jText9Region8.getText();
+        sudokuActual[8][6] = jText7Region9.getText();
+        sudokuActual[8][7] = jText8Region9.getText();
+        sudokuActual[8][8] = jText9Region9.getText();
+
+        imprmirSudoku();
     }
 }
