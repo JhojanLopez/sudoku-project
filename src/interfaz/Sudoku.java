@@ -27,7 +27,7 @@ public class Sudoku extends javax.swing.JFrame {
     private Stack<Accion> deshacer;
     private Stack<Accion> rehacer;
     private String sudokuPartida[][];
-    
+    private List<String> historial;
 
     public Sudoku() {
         this.archivoConfigPartida = "configuracionPartida.txt";
@@ -35,6 +35,7 @@ public class Sudoku extends javax.swing.JFrame {
         this.deshacer = new Stack<Accion>();
         this.rehacer = new Stack<Accion>();
         this.sudokuPartida = new String[9][9];
+        this.historial = new ArrayList<String>();
         initComponents();
         establecerPartida();
     }
@@ -51,6 +52,7 @@ public class Sudoku extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButtonSalir = new javax.swing.JButton();
+        jButtonVerJugadas = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanelSudoku = new javax.swing.JPanel();
         jPanelRegion1 = new javax.swing.JPanel();
@@ -163,29 +165,35 @@ public class Sudoku extends javax.swing.JFrame {
             }
         });
 
+        jButtonVerJugadas.setText("Ver jugadas");
+        jButtonVerJugadas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerJugadasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(255, Short.MAX_VALUE)
+                .addGap(17, 17, 17)
+                .addComponent(jButtonVerJugadas)
+                .addGap(153, 153, 153)
                 .addComponent(jLabel1)
-                .addGap(157, 157, 157)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButtonSalir)
-                .addGap(19, 19, 19))
+                .addGap(17, 17, 17))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jButtonSalir)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(19, 19, 19))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jButtonSalir)
+                    .addComponent(jButtonVerJugadas))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -317,7 +325,7 @@ public class Sudoku extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanelRegion2.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        jPanelRegion2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jText1Region2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText1Region2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -567,7 +575,7 @@ public class Sudoku extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanelRegion4.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        jPanelRegion4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jText1Region4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText1Region4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -693,7 +701,7 @@ public class Sudoku extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanelRegion5.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        jPanelRegion5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jText1Region5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText1Region5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -819,7 +827,7 @@ public class Sudoku extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanelRegion6.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        jPanelRegion6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jText1Region6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText1Region6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -1069,7 +1077,7 @@ public class Sudoku extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanelRegion8.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        jPanelRegion8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jText1Region8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText1Region8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -1407,6 +1415,8 @@ public class Sudoku extends javax.swing.JFrame {
             }
         });
 
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout jPanelOpcionesLayout = new javax.swing.GroupLayout(jPanelOpciones);
         jPanelOpciones.setLayout(jPanelOpcionesLayout);
         jPanelOpcionesLayout.setHorizontalGroup(
@@ -1414,9 +1424,9 @@ public class Sudoku extends javax.swing.JFrame {
             .addGroup(jPanelOpcionesLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(jButtonDeshacer)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(164, 164, 164)
                 .addComponent(jButtonComprobar)
-                .addGap(158, 158, 158)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButtonRehacer)
                 .addGap(38, 38, 38))
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1444,7 +1454,7 @@ public class Sudoku extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -1457,140 +1467,122 @@ public class Sudoku extends javax.swing.JFrame {
 
     private void jText1Region1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText1Region1KeyTyped
 
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText1Region1.getText().length() == 1) {
-            evt.consume();
-        }
-
-        if (evt.getKeyChar() == '0') {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText1Region1.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText1Region1.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
                 if (evaluarAccion(0, 0, "" + evt.getKeyChar())) {
-                    almacenarAccion(this.jText1Region1, "" + evt.getKeyChar());
+                    //               TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 0, 0, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText1Region1, "" + evt.getKeyChar(), 0, 0);
+
                 } else {
                     evt.consume();
                 }
-            } else if (jText1Region1.getText().equals("")) {
-                System.out.println("es vacio");
+
             }
         }
-
-
     }//GEN-LAST:event_jText1Region1KeyTyped
 
     private void jText2Region1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText2Region1KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText2Region1.getText().length() == 1) {
-            evt.consume();
-        }
-
-        if (evt.getKeyChar() == '0') {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText2Region1.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText2Region1.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
                 if (evaluarAccion(0, 1, "" + evt.getKeyChar())) {
-                    almacenarAccion(this.jText2Region1, "" + evt.getKeyChar());
+                    //               TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 0, 1, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText2Region1, "" + evt.getKeyChar(), 0, 1);
+
                 } else {
                     evt.consume();
                 }
 
-            } else if (jText2Region1.getText().equals("")) {
-                System.out.println("es vacio");
             }
         }
     }//GEN-LAST:event_jText2Region1KeyTyped
 
     private void jText3Region1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText3Region1KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText3Region1.getText().length() == 1) {
+
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText3Region1.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText3Region1.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
                 if (evaluarAccion(0, 2, "" + evt.getKeyChar())) {
-                    almacenarAccion(this.jText3Region1, "" + evt.getKeyChar());
+                    //               TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 0, 2, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText3Region1, "" + evt.getKeyChar(), 0, 2);
 
                 } else {
                     evt.consume();
                 }
 
-            } else if (jText3Region1.getText().equals("")) {
-                System.out.println("es vacio");
             }
         }
     }//GEN-LAST:event_jText3Region1KeyTyped
 
     private void jText4Region1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText4Region1KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText4Region1.getText().length() == 1) {
-            evt.consume();
-        }
-
-        if (evt.getKeyChar() == '0') {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText4Region1.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText4Region1.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText4Region1, "" + evt.getKeyChar());
+                if (evaluarAccion(1, 0, "" + evt.getKeyChar())) {
+                    //               TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 1, 0, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText4Region1, "" + evt.getKeyChar(), 1, 0);
 
-            } else if (jText4Region1.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText4Region1KeyTyped
 
     private void jText5Region1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText5Region1KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText5Region1.getText().length() == 1) {
-            evt.consume();
-        }
-
-        if (evt.getKeyChar() == '0') {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText5Region1.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText5Region1.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText5Region1, "" + evt.getKeyChar());
+                if (evaluarAccion(1, 1, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 1, 1, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText5Region1, "" + evt.getKeyChar(), 1, 1);
 
-            } else if (jText5Region1.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText5Region1KeyTyped
@@ -1612,7 +1604,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText6Region1, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText6Region1, "" + evt.getKeyChar());
 
             } else if (jText6Region1.getText().equals("")) {
                 System.out.println("es vacio");
@@ -1637,7 +1629,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText7Region1, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText7Region1, "" + evt.getKeyChar());
 
             } else if (jText7Region1.getText().equals("")) {
                 System.out.println("es vacio");
@@ -1662,7 +1654,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText8Region1, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText8Region1, "" + evt.getKeyChar());
 
             } else if (jText8Region1.getText().equals("")) {
                 System.out.println("es vacio");
@@ -1686,7 +1678,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText9Region1, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText9Region1, "" + evt.getKeyChar());
 
             } else if (jText9Region1.getText().equals("")) {
                 System.out.println("es vacio");
@@ -1710,7 +1702,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText1Region2, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText1Region2, "" + evt.getKeyChar());
 
             } else if (jText1Region2.getText().equals("")) {
                 System.out.println("es vacio");
@@ -1734,7 +1726,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText2Region2, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText2Region2, "" + evt.getKeyChar());
 
             } else if (jText2Region2.getText().equals("")) {
                 System.out.println("es vacio");
@@ -1758,7 +1750,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText3Region2, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText3Region2, "" + evt.getKeyChar());
 
             } else if (jText3Region2.getText().equals("")) {
                 System.out.println("es vacio");
@@ -1782,7 +1774,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText4Region2, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText4Region2, "" + evt.getKeyChar());
 
             } else if (jText4Region2.getText().equals("")) {
                 System.out.println("es vacio");
@@ -1806,7 +1798,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText5Region2, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText5Region2, "" + evt.getKeyChar());
 
             } else if (jText5Region2.getText().equals("")) {
                 System.out.println("es vacio");
@@ -1830,7 +1822,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText6Region2, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText6Region2, "" + evt.getKeyChar());
 
             } else if (jText6Region2.getText().equals("")) {
                 System.out.println("es vacio");
@@ -1854,7 +1846,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText7Region2, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText7Region2, "" + evt.getKeyChar());
 
             } else if (jText7Region2.getText().equals("")) {
                 System.out.println("es vacio");
@@ -1879,7 +1871,7 @@ public class Sudoku extends javax.swing.JFrame {
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
                 if (evaluarAccion(2, 4, "" + evt.getKeyChar())) {
-                    almacenarAccion(this.jText8Region2, "" + evt.getKeyChar());
+                    almacenarAccionDeshacer(this.jText8Region2, "" + evt.getKeyChar());
                 } else {
                     evt.consume();
                 }
@@ -1907,7 +1899,7 @@ public class Sudoku extends javax.swing.JFrame {
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
                 if (evaluarAccion(2, 5, "" + evt.getKeyChar())) {
-                    almacenarAccion(this.jText9Region2, "" + evt.getKeyChar());
+                    almacenarAccionDeshacer(this.jText9Region2, "" + evt.getKeyChar());
                 } else {
                     evt.consume();
                 }
@@ -1934,7 +1926,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText1Region3, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText1Region3, "" + evt.getKeyChar());
 
             } else if (jText1Region3.getText().equals("")) {
                 System.out.println("es vacio");
@@ -1958,7 +1950,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText2Region3, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText2Region3, "" + evt.getKeyChar());
 
             } else if (jText2Region3.getText().equals("")) {
                 System.out.println("es vacio");
@@ -1982,7 +1974,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText3Region3, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText3Region3, "" + evt.getKeyChar());
 
             } else if (jText3Region3.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2006,7 +1998,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText4Region3, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText4Region3, "" + evt.getKeyChar());
 
             } else if (jText4Region3.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2030,7 +2022,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText5Region3, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText5Region3, "" + evt.getKeyChar());
 
             } else if (jText5Region3.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2054,7 +2046,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText6Region3, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText6Region3, "" + evt.getKeyChar());
 
             } else if (jText6Region3.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2079,12 +2071,12 @@ public class Sudoku extends javax.swing.JFrame {
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
                 if (evaluarAccion(2, 6, "" + evt.getKeyChar())) {
-                    almacenarAccion(this.jText7Region3, "" + evt.getKeyChar());
+                    almacenarAccionDeshacer(this.jText7Region3, "" + evt.getKeyChar());
 
                 } else {
                     evt.consume();
                 }
-                almacenarAccion(this.jText7Region3, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText7Region3, "" + evt.getKeyChar());
 
             } else if (jText7Region3.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2108,7 +2100,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText8Region3, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText8Region3, "" + evt.getKeyChar());
 
             } else if (jText8Region3.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2133,7 +2125,7 @@ public class Sudoku extends javax.swing.JFrame {
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
                 if (evaluarAccion(2, 8, "" + evt.getKeyChar())) {
-                    almacenarAccion(this.jText9Region3, "" + evt.getKeyChar());
+                    almacenarAccionDeshacer(this.jText9Region3, "" + evt.getKeyChar());
                 } else {
                     evt.consume();
                 }
@@ -2160,7 +2152,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText1Region4, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText1Region4, "" + evt.getKeyChar());
 
             } else if (jText1Region4.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2184,7 +2176,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText2Region4, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText2Region4, "" + evt.getKeyChar());
 
             } else if (jText2Region4.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2208,7 +2200,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText3Region4, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText3Region4, "" + evt.getKeyChar());
 
             } else if (jText3Region4.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2232,7 +2224,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText4Region4, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText4Region4, "" + evt.getKeyChar());
 
             } else if (jText4Region4.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2256,7 +2248,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText5Region4, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText5Region4, "" + evt.getKeyChar());
 
             } else if (jText5Region4.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2279,7 +2271,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText6Region4, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText6Region4, "" + evt.getKeyChar());
 
             } else if (jText6Region4.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2303,7 +2295,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText7Region4, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText7Region4, "" + evt.getKeyChar());
 
             } else if (jText7Region4.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2327,7 +2319,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText8Region4, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText8Region4, "" + evt.getKeyChar());
 
             } else if (jText8Region4.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2351,7 +2343,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText9Region4, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText9Region4, "" + evt.getKeyChar());
 
             } else if (jText9Region4.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2376,7 +2368,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText1Region5, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText1Region5, "" + evt.getKeyChar());
 
             } else if (jText1Region5.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2400,7 +2392,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText2Region5, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText2Region5, "" + evt.getKeyChar());
 
             } else if (jText2Region5.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2424,7 +2416,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText3Region5, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText3Region5, "" + evt.getKeyChar());
 
             } else if (jText3Region5.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2447,7 +2439,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText4Region5, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText4Region5, "" + evt.getKeyChar());
 
             } else if (jText4Region5.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2472,7 +2464,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText5Region5, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText5Region5, "" + evt.getKeyChar());
 
             } else if (jText5Region5.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2496,7 +2488,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText6Region5, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText6Region5, "" + evt.getKeyChar());
 
             } else if (jText6Region5.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2520,7 +2512,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText7Region5, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText7Region5, "" + evt.getKeyChar());
 
             } else if (jText7Region5.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2544,7 +2536,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText8Region5, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText8Region5, "" + evt.getKeyChar());
 
             } else if (jText8Region5.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2568,7 +2560,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText9Region5, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText9Region5, "" + evt.getKeyChar());
 
             } else if (jText9Region5.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2592,7 +2584,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText1Region6, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText1Region6, "" + evt.getKeyChar());
 
             } else if (jText1Region6.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2618,7 +2610,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText2Region6, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText2Region6, "" + evt.getKeyChar());
 
             } else if (jText2Region6.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2642,7 +2634,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText3Region6, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText3Region6, "" + evt.getKeyChar());
 
             } else if (jText3Region6.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2667,7 +2659,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText4Region6, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText4Region6, "" + evt.getKeyChar());
 
             } else if (jText4Region6.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2692,7 +2684,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText5Region6, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText5Region6, "" + evt.getKeyChar());
 
             } else if (jText5Region6.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2716,7 +2708,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText6Region6, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText6Region6, "" + evt.getKeyChar());
 
             } else if (jText6Region6.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2741,7 +2733,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText7Region6, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText7Region6, "" + evt.getKeyChar());
 
             } else if (jText7Region6.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2764,7 +2756,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText8Region6, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText8Region6, "" + evt.getKeyChar());
 
             } else if (jText8Region6.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2786,7 +2778,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText9Region6, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText9Region6, "" + evt.getKeyChar());
 
             } else if (jText9Region6.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2808,7 +2800,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText1Region7, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText1Region7, "" + evt.getKeyChar());
 
             } else if (jText1Region7.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2832,7 +2824,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText2Region7, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText2Region7, "" + evt.getKeyChar());
 
             } else if (jText2Region7.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2856,7 +2848,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText3Region7, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText3Region7, "" + evt.getKeyChar());
 
             } else if (jText3Region7.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2880,7 +2872,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText4Region7, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText4Region7, "" + evt.getKeyChar());
 
             } else if (jText4Region7.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2904,7 +2896,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText5Region7, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText5Region7, "" + evt.getKeyChar());
 
             } else if (jText5Region7.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2927,7 +2919,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText6Region7, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText6Region7, "" + evt.getKeyChar());
 
             } else if (jText6Region7.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2950,7 +2942,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText7Region7, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText7Region7, "" + evt.getKeyChar());
 
             } else if (jText7Region7.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2973,7 +2965,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText8Region7, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText8Region7, "" + evt.getKeyChar());
 
             } else if (jText8Region7.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2997,7 +2989,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText9Region7, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText9Region7, "" + evt.getKeyChar());
 
             } else if (jText9Region7.getText().equals("")) {
                 System.out.println("es vacio");
@@ -3020,7 +3012,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText1Region8, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText1Region8, "" + evt.getKeyChar());
 
             } else if (jText1Region8.getText().equals("")) {
                 System.out.println("es vacio");
@@ -3044,7 +3036,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText2Region8, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText2Region8, "" + evt.getKeyChar());
 
             } else if (jText2Region8.getText().equals("")) {
                 System.out.println("es vacio");
@@ -3068,7 +3060,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText3Region8, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText3Region8, "" + evt.getKeyChar());
 
             } else if (jText3Region8.getText().equals("")) {
                 System.out.println("es vacio");
@@ -3092,7 +3084,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText4Region8, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText4Region8, "" + evt.getKeyChar());
 
             } else if (jText4Region8.getText().equals("")) {
                 System.out.println("es vacio");
@@ -3116,7 +3108,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText5Region8, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText5Region8, "" + evt.getKeyChar());
 
             } else if (jText5Region8.getText().equals("")) {
                 System.out.println("es vacio");
@@ -3140,7 +3132,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText6Region8, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText6Region8, "" + evt.getKeyChar());
 
             } else if (jText6Region8.getText().equals("")) {
                 System.out.println("es vacio");
@@ -3164,7 +3156,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText1Region8, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText1Region8, "" + evt.getKeyChar());
 
             } else if (jText1Region8.getText().equals("")) {
                 System.out.println("es vacio");
@@ -3174,7 +3166,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText7Region8, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText7Region8, "" + evt.getKeyChar());
 
             } else if (jText7Region8.getText().equals("")) {
                 System.out.println("es vacio");
@@ -3198,7 +3190,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText8Region8, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText8Region8, "" + evt.getKeyChar());
 
             } else if (jText8Region8.getText().equals("")) {
                 System.out.println("es vacio");
@@ -3222,7 +3214,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText9Region8, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText9Region8, "" + evt.getKeyChar());
 
             } else if (jText9Region8.getText().equals("")) {
                 System.out.println("es vacio");
@@ -3246,7 +3238,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText1Region9, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText1Region9, "" + evt.getKeyChar());
 
             } else if (jText1Region9.getText().equals("")) {
                 System.out.println("es vacio");
@@ -3270,7 +3262,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText2Region9, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText2Region9, "" + evt.getKeyChar());
 
             } else if (jText2Region9.getText().equals("")) {
                 System.out.println("es vacio");
@@ -3294,7 +3286,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText3Region9, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText3Region9, "" + evt.getKeyChar());
 
             } else if (jText3Region9.getText().equals("")) {
                 System.out.println("es vacio");
@@ -3318,7 +3310,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText4Region9, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText4Region9, "" + evt.getKeyChar());
 
             } else if (jText4Region9.getText().equals("")) {
                 System.out.println("es vacio");
@@ -3342,7 +3334,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText5Region9, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText5Region9, "" + evt.getKeyChar());
 
             } else if (jText5Region9.getText().equals("")) {
                 System.out.println("es vacio");
@@ -3366,7 +3358,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText6Region9, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText6Region9, "" + evt.getKeyChar());
 
             } else if (jText6Region9.getText().equals("")) {
                 System.out.println("es vacio");
@@ -3390,7 +3382,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText7Region9, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText7Region9, "" + evt.getKeyChar());
 
             } else if (jText7Region9.getText().equals("")) {
                 System.out.println("es vacio");
@@ -3414,7 +3406,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText8Region9, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText8Region9, "" + evt.getKeyChar());
 
             } else if (jText8Region9.getText().equals("")) {
                 System.out.println("es vacio");
@@ -3438,7 +3430,7 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText9Region9, "" + evt.getKeyChar());
+                almacenarAccionDeshacer(this.jText9Region9, "" + evt.getKeyChar());
 
             } else if (jText9Region9.getText().equals("")) {
                 System.out.println("es vacio");
@@ -3462,6 +3454,7 @@ public class Sudoku extends javax.swing.JFrame {
             var accion = deshacer.pop();
             rehacer.push(accion);//antes de deshacer una accion ponemos esa accion en la pila de rehacer
             accion.getCampo().setText("");
+            almacenarHistorial("DESHACER", accion.getFila(), accion.getColumna(), accion.getValor());
         }
 
         if (deshacer.empty()) {
@@ -3477,12 +3470,19 @@ public class Sudoku extends javax.swing.JFrame {
             var accion = rehacer.pop();
             deshacer.push(accion);
             accion.getCampo().setText(accion.getValor());
+            almacenarHistorial("REHACER", accion.getFila(), accion.getColumna(), accion.getValor());
+
         }
 
         if (rehacer.empty()) {
             System.out.println("Pila Rehacer vacia");
         }
     }//GEN-LAST:event_jButtonRehacerActionPerformed
+
+    private void jButtonVerJugadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerJugadasActionPerformed
+        // TODO add your handling code here:
+        new Historial(this, true, historial).setVisible(true);
+    }//GEN-LAST:event_jButtonVerJugadasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3525,6 +3525,7 @@ public class Sudoku extends javax.swing.JFrame {
     private javax.swing.JButton jButtonDeshacer;
     private javax.swing.JButton jButtonRehacer;
     private javax.swing.JButton jButtonSalir;
+    private javax.swing.JButton jButtonVerJugadas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
@@ -4315,11 +4316,10 @@ public class Sudoku extends javax.swing.JFrame {
 
     }
 
-    private void almacenarAccion(JTextField campo, String valor) {
-
-        System.out.println("campo :" + campo + " valor :" + valor);
-        Accion a = new Accion(campo, valor);
-        deshacer.push(a);
+    private void almacenarJugadaValida(JTextField campo, String valor, int fila, int columna) {
+        Accion a = new Accion(campo, valor, fila, columna);
+        deshacer.push(a);//almacenamos en la pila deshacer la jugada valida
+        verificarPartida();
 
         System.out.println(deshacer.toString());//mostramos el estado de la pila
     }
@@ -4549,5 +4549,14 @@ public class Sudoku extends javax.swing.JFrame {
             }
         }
         return false;
+    }
+
+    private void almacenarHistorial(String tipoAccion, int fila, int columna, String valor) {//almacena el historial de las jugadas
+
+        historial.add(tipoAccion + " | " + " Fila: " + (fila + 1) + ", Columna: " + (columna + 1) + " |    " + valor);
+    }
+
+    private void verificarPartida() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

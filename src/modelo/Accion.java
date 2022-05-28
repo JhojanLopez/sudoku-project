@@ -13,17 +13,22 @@ import javax.swing.JTextField;
  */
 public class Accion {
     
-    private JTextField campo;
-    private String valor;
-
+    private JTextField campo;//campo en donde se almacena graficamente
+    private String valor;//valor de ese campo
+    private int fila; //valor de la posicion de la fila en la matriz sudoku (donde se almacena logicamente)
+    private int columna; //valor de la posicion de la columna en la matriz sudoku (donde se almacena logicamente)
+    
     public Accion() {
     }
 
-    public Accion(JTextField campo, String valor) {
+    public Accion(JTextField campo, String valor, int fila, int columna) {
         this.campo = campo;
         this.valor = valor;
+        this.fila = fila;
+        this.columna = columna;
     }
 
+    
     public JTextField getCampo() {
         return campo;
     }
@@ -39,6 +44,28 @@ public class Accion {
     public void setValor(String valor) {
         this.valor = valor;
     }
+
+    public int getFila() {
+        return fila;
+    }
+
+    public void setFila(int fila) {
+        this.fila = fila;
+    }
+
+    public int getColumna() {
+        return columna;
+    }
+
+    public void setColumna(int columna) {
+        this.columna = columna;
+    }
+
+    @Override
+    public String toString() {
+        return "Accion{" + "campo=" + campo + ", valor=" + valor + ", fila=" + fila + ", columna=" + columna + '}';
+    }
+    
     
     
 }
