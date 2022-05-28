@@ -26,14 +26,15 @@ public class Sudoku extends javax.swing.JFrame {
     private String archivoRespuesta;
     private Stack<Accion> deshacer;
     private Stack<Accion> rehacer;
-    private String sudokuActual[][];
+    private String sudokuPartida[][];
+    
 
     public Sudoku() {
         this.archivoConfigPartida = "configuracionPartida.txt";
         this.archivoRespuesta = "respuestaPartida.txt";
         this.deshacer = new Stack<Accion>();
         this.rehacer = new Stack<Accion>();
-        this.sudokuActual = new String[9][9];
+        this.sudokuPartida = new String[9][9];
         initComponents();
         establecerPartida();
     }
@@ -1472,8 +1473,11 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText1Region1, "" + evt.getKeyChar());
-
+                if (evaluarAccion(0, 0, "" + evt.getKeyChar())) {
+                    almacenarAccion(this.jText1Region1, "" + evt.getKeyChar());
+                } else {
+                    evt.consume();
+                }
             } else if (jText1Region1.getText().equals("")) {
                 System.out.println("es vacio");
             }
@@ -1499,7 +1503,11 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText2Region1, "" + evt.getKeyChar());
+                if (evaluarAccion(0, 1, "" + evt.getKeyChar())) {
+                    almacenarAccion(this.jText2Region1, "" + evt.getKeyChar());
+                } else {
+                    evt.consume();
+                }
 
             } else if (jText2Region1.getText().equals("")) {
                 System.out.println("es vacio");
@@ -1524,7 +1532,12 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText3Region1, "" + evt.getKeyChar());
+                if (evaluarAccion(0, 2, "" + evt.getKeyChar())) {
+                    almacenarAccion(this.jText3Region1, "" + evt.getKeyChar());
+
+                } else {
+                    evt.consume();
+                }
 
             } else if (jText3Region1.getText().equals("")) {
                 System.out.println("es vacio");
@@ -1865,7 +1878,11 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText8Region2, "" + evt.getKeyChar());
+                if (evaluarAccion(2, 4, "" + evt.getKeyChar())) {
+                    almacenarAccion(this.jText8Region2, "" + evt.getKeyChar());
+                } else {
+                    evt.consume();
+                }
 
             } else if (jText8Region2.getText().equals("")) {
                 System.out.println("es vacio");
@@ -1889,7 +1906,11 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText9Region2, "" + evt.getKeyChar());
+                if (evaluarAccion(2, 5, "" + evt.getKeyChar())) {
+                    almacenarAccion(this.jText9Region2, "" + evt.getKeyChar());
+                } else {
+                    evt.consume();
+                }
 
             } else if (jText9Region2.getText().equals("")) {
                 System.out.println("es vacio");
@@ -2057,6 +2078,12 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
+                if (evaluarAccion(2, 6, "" + evt.getKeyChar())) {
+                    almacenarAccion(this.jText7Region3, "" + evt.getKeyChar());
+
+                } else {
+                    evt.consume();
+                }
                 almacenarAccion(this.jText7Region3, "" + evt.getKeyChar());
 
             } else if (jText7Region3.getText().equals("")) {
@@ -2105,7 +2132,11 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccion(this.jText9Region3, "" + evt.getKeyChar());
+                if (evaluarAccion(2, 8, "" + evt.getKeyChar())) {
+                    almacenarAccion(this.jText9Region3, "" + evt.getKeyChar());
+                } else {
+                    evt.consume();
+                }
 
             } else if (jText9Region3.getText().equals("")) {
                 System.out.println("es vacio");
@@ -4330,140 +4361,193 @@ public class Sudoku extends javax.swing.JFrame {
 
     private void agregarFila1() {
 
-        sudokuActual[0][0] = jText1Region1.getText();
-        sudokuActual[0][1] = jText2Region1.getText();
-        sudokuActual[0][2] = jText3Region1.getText();
-        sudokuActual[0][3] = jText1Region2.getText();
-        sudokuActual[0][4] = jText2Region2.getText();
-        sudokuActual[0][5] = jText3Region2.getText();
-        sudokuActual[0][6] = jText1Region3.getText();
-        sudokuActual[0][7] = jText2Region3.getText();
-        sudokuActual[0][8] = jText3Region3.getText();
+        sudokuPartida[0][0] = jText1Region1.getText();
+        sudokuPartida[0][1] = jText2Region1.getText();
+        sudokuPartida[0][2] = jText3Region1.getText();
+        sudokuPartida[0][3] = jText1Region2.getText();
+        sudokuPartida[0][4] = jText2Region2.getText();
+        sudokuPartida[0][5] = jText3Region2.getText();
+        sudokuPartida[0][6] = jText1Region3.getText();
+        sudokuPartida[0][7] = jText2Region3.getText();
+        sudokuPartida[0][8] = jText3Region3.getText();
 
         imprmirSudoku();
     }
 
     public void imprmirSudoku() {
 
-        for (int f = 0; f < sudokuActual.length; f++) {
-            for (int c = 0; c < sudokuActual[0].length; c++) {
+        for (int f = 0; f < sudokuPartida.length; f++) {
+            for (int c = 0; c < sudokuPartida[0].length; c++) {
                 System.out.println("\nsudoku [" + f + "]" + "[" + c + "]:"
-                        + sudokuActual[f][c]);
+                        + sudokuPartida[f][c]);
             }
         }
 
     }
 
     private void agregarFila2() {
-        sudokuActual[1][0] = jText4Region1.getText();
-        sudokuActual[1][1] = jText5Region1.getText();
-        sudokuActual[1][2] = jText6Region1.getText();
-        sudokuActual[1][3] = jText4Region2.getText();
-        sudokuActual[1][4] = jText5Region2.getText();
-        sudokuActual[1][5] = jText6Region2.getText();
-        sudokuActual[1][6] = jText4Region3.getText();
-        sudokuActual[1][7] = jText5Region3.getText();
-        sudokuActual[1][8] = jText6Region3.getText();
+        sudokuPartida[1][0] = jText4Region1.getText();
+        sudokuPartida[1][1] = jText5Region1.getText();
+        sudokuPartida[1][2] = jText6Region1.getText();
+        sudokuPartida[1][3] = jText4Region2.getText();
+        sudokuPartida[1][4] = jText5Region2.getText();
+        sudokuPartida[1][5] = jText6Region2.getText();
+        sudokuPartida[1][6] = jText4Region3.getText();
+        sudokuPartida[1][7] = jText5Region3.getText();
+        sudokuPartida[1][8] = jText6Region3.getText();
 
         imprmirSudoku();
     }
 
     private void agregarFila3() {
-        sudokuActual[2][0] = jText7Region1.getText();
-        sudokuActual[2][1] = jText8Region1.getText();
-        sudokuActual[2][2] = jText9Region1.getText();
-        sudokuActual[2][3] = jText7Region2.getText();
-        sudokuActual[2][4] = jText8Region2.getText();
-        sudokuActual[2][5] = jText9Region2.getText();
-        sudokuActual[2][6] = jText7Region3.getText();
-        sudokuActual[2][7] = jText8Region3.getText();
-        sudokuActual[2][8] = jText9Region3.getText();
+        sudokuPartida[2][0] = jText7Region1.getText();
+        sudokuPartida[2][1] = jText8Region1.getText();
+        sudokuPartida[2][2] = jText9Region1.getText();
+        sudokuPartida[2][3] = jText7Region2.getText();
+        sudokuPartida[2][4] = jText8Region2.getText();
+        sudokuPartida[2][5] = jText9Region2.getText();
+        sudokuPartida[2][6] = jText7Region3.getText();
+        sudokuPartida[2][7] = jText8Region3.getText();
+        sudokuPartida[2][8] = jText9Region3.getText();
 
         imprmirSudoku();
     }
 
     private void agregarFila4() {
-        sudokuActual[3][0] = jText1Region4.getText();
-        sudokuActual[3][1] = jText2Region4.getText();
-        sudokuActual[3][2] = jText3Region4.getText();
-        sudokuActual[3][3] = jText1Region5.getText();
-        sudokuActual[3][4] = jText2Region5.getText();
-        sudokuActual[3][5] = jText3Region5.getText();
-        sudokuActual[3][6] = jText1Region6.getText();
-        sudokuActual[3][7] = jText2Region6.getText();
-        sudokuActual[3][8] = jText3Region6.getText();
+        sudokuPartida[3][0] = jText1Region4.getText();
+        sudokuPartida[3][1] = jText2Region4.getText();
+        sudokuPartida[3][2] = jText3Region4.getText();
+        sudokuPartida[3][3] = jText1Region5.getText();
+        sudokuPartida[3][4] = jText2Region5.getText();
+        sudokuPartida[3][5] = jText3Region5.getText();
+        sudokuPartida[3][6] = jText1Region6.getText();
+        sudokuPartida[3][7] = jText2Region6.getText();
+        sudokuPartida[3][8] = jText3Region6.getText();
 
         imprmirSudoku();
     }
 
     private void agregarFila5() {
-        sudokuActual[4][0] = jText4Region4.getText();
-        sudokuActual[4][1] = jText5Region4.getText();
-        sudokuActual[4][2] = jText6Region4.getText();
-        sudokuActual[4][3] = jText4Region5.getText();
-        sudokuActual[4][4] = jText5Region5.getText();
-        sudokuActual[4][5] = jText6Region5.getText();
-        sudokuActual[4][6] = jText4Region6.getText();
-        sudokuActual[4][7] = jText5Region6.getText();
-        sudokuActual[4][8] = jText6Region6.getText();
+        sudokuPartida[4][0] = jText4Region4.getText();
+        sudokuPartida[4][1] = jText5Region4.getText();
+        sudokuPartida[4][2] = jText6Region4.getText();
+        sudokuPartida[4][3] = jText4Region5.getText();
+        sudokuPartida[4][4] = jText5Region5.getText();
+        sudokuPartida[4][5] = jText6Region5.getText();
+        sudokuPartida[4][6] = jText4Region6.getText();
+        sudokuPartida[4][7] = jText5Region6.getText();
+        sudokuPartida[4][8] = jText6Region6.getText();
 
         imprmirSudoku();
 
     }
 
     private void agregarFila6() {
-        sudokuActual[5][0] = jText7Region4.getText();
-        sudokuActual[5][1] = jText8Region4.getText();
-        sudokuActual[5][2] = jText9Region4.getText();
-        sudokuActual[5][3] = jText7Region5.getText();
-        sudokuActual[5][4] = jText8Region5.getText();
-        sudokuActual[5][5] = jText9Region5.getText();
-        sudokuActual[5][6] = jText7Region6.getText();
-        sudokuActual[5][7] = jText8Region6.getText();
-        sudokuActual[5][8] = jText9Region6.getText();
+        sudokuPartida[5][0] = jText7Region4.getText();
+        sudokuPartida[5][1] = jText8Region4.getText();
+        sudokuPartida[5][2] = jText9Region4.getText();
+        sudokuPartida[5][3] = jText7Region5.getText();
+        sudokuPartida[5][4] = jText8Region5.getText();
+        sudokuPartida[5][5] = jText9Region5.getText();
+        sudokuPartida[5][6] = jText7Region6.getText();
+        sudokuPartida[5][7] = jText8Region6.getText();
+        sudokuPartida[5][8] = jText9Region6.getText();
 
         imprmirSudoku();
     }
 
     private void agregarFila7() {
-        sudokuActual[6][0] = jText1Region7.getText();
-        sudokuActual[6][1] = jText2Region7.getText();
-        sudokuActual[6][2] = jText3Region7.getText();
-        sudokuActual[6][3] = jText1Region8.getText();
-        sudokuActual[6][4] = jText2Region8.getText();
-        sudokuActual[6][5] = jText3Region8.getText();
-        sudokuActual[6][6] = jText1Region9.getText();
-        sudokuActual[6][7] = jText2Region9.getText();
-        sudokuActual[6][8] = jText3Region9.getText();
+        sudokuPartida[6][0] = jText1Region7.getText();
+        sudokuPartida[6][1] = jText2Region7.getText();
+        sudokuPartida[6][2] = jText3Region7.getText();
+        sudokuPartida[6][3] = jText1Region8.getText();
+        sudokuPartida[6][4] = jText2Region8.getText();
+        sudokuPartida[6][5] = jText3Region8.getText();
+        sudokuPartida[6][6] = jText1Region9.getText();
+        sudokuPartida[6][7] = jText2Region9.getText();
+        sudokuPartida[6][8] = jText3Region9.getText();
 
         imprmirSudoku();
     }
 
     private void agregarFila8() {
-        sudokuActual[7][0] = jText4Region7.getText();
-        sudokuActual[7][1] = jText5Region7.getText();
-        sudokuActual[7][2] = jText6Region7.getText();
-        sudokuActual[7][3] = jText4Region8.getText();
-        sudokuActual[7][4] = jText5Region8.getText();
-        sudokuActual[7][5] = jText6Region8.getText();
-        sudokuActual[7][6] = jText4Region9.getText();
-        sudokuActual[7][7] = jText5Region9.getText();
-        sudokuActual[7][8] = jText6Region9.getText();
+        sudokuPartida[7][0] = jText4Region7.getText();
+        sudokuPartida[7][1] = jText5Region7.getText();
+        sudokuPartida[7][2] = jText6Region7.getText();
+        sudokuPartida[7][3] = jText4Region8.getText();
+        sudokuPartida[7][4] = jText5Region8.getText();
+        sudokuPartida[7][5] = jText6Region8.getText();
+        sudokuPartida[7][6] = jText4Region9.getText();
+        sudokuPartida[7][7] = jText5Region9.getText();
+        sudokuPartida[7][8] = jText6Region9.getText();
 
         imprmirSudoku();
     }
 
     private void agregarFila9() {
-        sudokuActual[8][0] = jText7Region7.getText();
-        sudokuActual[8][1] = jText8Region7.getText();
-        sudokuActual[8][2] = jText9Region7.getText();
-        sudokuActual[8][3] = jText7Region8.getText();
-        sudokuActual[8][4] = jText8Region8.getText();
-        sudokuActual[8][5] = jText9Region8.getText();
-        sudokuActual[8][6] = jText7Region9.getText();
-        sudokuActual[8][7] = jText8Region9.getText();
-        sudokuActual[8][8] = jText9Region9.getText();
+        sudokuPartida[8][0] = jText7Region7.getText();
+        sudokuPartida[8][1] = jText8Region7.getText();
+        sudokuPartida[8][2] = jText9Region7.getText();
+        sudokuPartida[8][3] = jText7Region8.getText();
+        sudokuPartida[8][4] = jText8Region8.getText();
+        sudokuPartida[8][5] = jText9Region8.getText();
+        sudokuPartida[8][6] = jText7Region9.getText();
+        sudokuPartida[8][7] = jText8Region9.getText();
+        sudokuPartida[8][8] = jText9Region9.getText();
 
         imprmirSudoku();
+    }
+
+    private boolean evaluarAccion(int fila, int columna, String valor) {
+        //evalua si una accion ingresada por el usuario es correcta evaluando el valor en la fila, columna y region
+        if (evaluarFila(fila, valor) || evaluarColumna(columna, valor) || evaluarRegion(fila, columna, valor)) {
+            return false;
+        }
+        return true;// si retorna true esta de manera correcta el valor
+    }
+
+    private boolean evaluarFila(int fila, String valor) {
+
+        for (int c = 0; c < sudokuPartida[0].length; c++) {
+            if (sudokuPartida[fila][c].equals(valor)) {//si es igual a cualquier valor de la fila
+                JOptionPane.showMessageDialog(rootPane, "El valor " + valor + " ya se encuentra en la fila", "Error", JOptionPane.ERROR_MESSAGE);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean evaluarColumna(int columna, String valor) {
+        for (int f = 0; f < sudokuPartida.length; f++) {
+            if (sudokuPartida[f][columna].equals(valor)) {//si es igual a cualquier valor de la fila
+                JOptionPane.showMessageDialog(rootPane, "El valor " + valor + " ya se encuentra en la columna", "Error", JOptionPane.ERROR_MESSAGE);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean evaluarRegion(int fila, int columna, String valor) {
+
+        int posFila = fila - fila % 3;
+        int posColumna = columna - columna % 3;
+
+        System.out.println("pos fila=" + posFila);
+        System.out.println("pos columna=" + posColumna);
+
+        System.out.println("EVALUANDO REGION");
+        for (int f = posFila; f < posFila + 3; f++) {
+            for (int c = posColumna; c < posColumna + 3; c++) {
+                System.out.println("dato en pos[" + f + "][" + c + "]=" + sudokuPartida[f][c] + " ¿es igual al valor?=" + valor);
+                if (sudokuPartida[f][c].equals(valor)) {
+
+                    JOptionPane.showMessageDialog(rootPane, "El valor " + valor + " ya se encuentra en la region", "Error", JOptionPane.ERROR_MESSAGE);
+                    return true;
+
+                }
+
+            }
+        }
+        return false;
     }
 }
