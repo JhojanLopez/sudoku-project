@@ -1588,1852 +1588,1823 @@ public class Sudoku extends javax.swing.JFrame {
     }//GEN-LAST:event_jText5Region1KeyTyped
 
     private void jText6Region1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region1KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText6Region1.getText().length() == 1) {
-            evt.consume();
-        }
-
-        if (evt.getKeyChar() == '0') {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText6Region1.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText6Region1.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText6Region1, "" + evt.getKeyChar());
+                if (evaluarAccion(1, 2, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 1, 2, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText6Region1, "" + evt.getKeyChar(), 1, 2);
 
-            } else if (jText6Region1.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText6Region1KeyTyped
 
     private void jText7Region1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region1KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText7Region1.getText().length() == 1) {
-            evt.consume();
-        }
-
-        if (evt.getKeyChar() == '0') {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText7Region1.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText7Region1.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText7Region1, "" + evt.getKeyChar());
+                if (evaluarAccion(2, 0, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 2, 0, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText7Region1, "" + evt.getKeyChar(), 2, 0);
 
-            } else if (jText7Region1.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText7Region1KeyTyped
 
     private void jText8Region1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region1KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText8Region1.getText().length() == 1) {
-            evt.consume();
-        }
-
-        if (evt.getKeyChar() == '0') {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText8Region1.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText8Region1.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText8Region1, "" + evt.getKeyChar());
+                if (evaluarAccion(2, 1, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 2, 1, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText8Region1, "" + evt.getKeyChar(), 2, 1);
 
-            } else if (jText8Region1.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText8Region1KeyTyped
 
     private void jText9Region1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region1KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText9Region1.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText9Region1.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText9Region1.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText9Region1, "" + evt.getKeyChar());
+                if (evaluarAccion(2, 2, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 2, 2, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText9Region1, "" + evt.getKeyChar(), 2, 2);
 
-            } else if (jText9Region1.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText9Region1KeyTyped
 
     private void jText1Region2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText1Region2KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText1Region2.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText1Region2.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText1Region2.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText1Region2, "" + evt.getKeyChar());
+                if (evaluarAccion(0, 3, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 0, 3, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText1Region2, "" + evt.getKeyChar(), 0, 3);
 
-            } else if (jText1Region2.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText1Region2KeyTyped
 
     private void jText2Region2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText2Region2KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText2Region2.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText2Region2.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText2Region2.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText2Region2, "" + evt.getKeyChar());
+                if (evaluarAccion(0, 4, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 0, 4, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText2Region2, "" + evt.getKeyChar(), 0, 4);
 
-            } else if (jText2Region2.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText2Region2KeyTyped
 
     private void jText3Region2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText3Region2KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText3Region2.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText3Region2.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText3Region2.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText3Region2, "" + evt.getKeyChar());
+                if (evaluarAccion(0, 5, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 0, 5, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText3Region2, "" + evt.getKeyChar(), 0, 5);
 
-            } else if (jText3Region2.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText3Region2KeyTyped
 
     private void jText4Region2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText4Region2KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText4Region2.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText4Region2.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText4Region2.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText4Region2, "" + evt.getKeyChar());
+                if (evaluarAccion(1, 3, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 1, 3, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText4Region2, "" + evt.getKeyChar(), 1, 3);
 
-            } else if (jText4Region2.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText4Region2KeyTyped
 
     private void jText5Region2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText5Region2KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText5Region2.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText5Region2.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText5Region2.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText5Region2, "" + evt.getKeyChar());
+                if (evaluarAccion(1, 4, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 1, 4, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText5Region2, "" + evt.getKeyChar(), 1, 4);
 
-            } else if (jText5Region2.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText5Region2KeyTyped
 
     private void jText6Region2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region2KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText6Region2.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText6Region2.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText6Region2.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText6Region2, "" + evt.getKeyChar());
+                if (evaluarAccion(1, 5, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 1, 5, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText6Region2, "" + evt.getKeyChar(), 1, 5);
 
-            } else if (jText6Region2.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText6Region2KeyTyped
 
     private void jText7Region2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region2KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText7Region2.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText7Region2.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText7Region2.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText7Region2, "" + evt.getKeyChar());
+                if (evaluarAccion(2, 3, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 2, 3, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText7Region2, "" + evt.getKeyChar(), 2, 3);
 
-            } else if (jText7Region2.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText7Region2KeyTyped
 
     private void jText8Region2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region2KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText8Region2.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText8Region2.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText8Region2.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
                 if (evaluarAccion(2, 4, "" + evt.getKeyChar())) {
-                    almacenarAccionDeshacer(this.jText8Region2, "" + evt.getKeyChar());
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 2, 4, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText8Region2, "" + evt.getKeyChar(), 2, 4);
+
                 } else {
                     evt.consume();
                 }
 
-            } else if (jText8Region2.getText().equals("")) {
-                System.out.println("es vacio");
             }
         }
     }//GEN-LAST:event_jText8Region2KeyTyped
 
     private void jText9Region2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region2KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText9Region2.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText9Region2.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText9Region2.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
                 if (evaluarAccion(2, 5, "" + evt.getKeyChar())) {
-                    almacenarAccionDeshacer(this.jText9Region2, "" + evt.getKeyChar());
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 2, 5, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText9Region2, "" + evt.getKeyChar(), 2, 5);
+
                 } else {
                     evt.consume();
                 }
 
-            } else if (jText9Region2.getText().equals("")) {
-                System.out.println("es vacio");
             }
         }
     }//GEN-LAST:event_jText9Region2KeyTyped
 
     private void jText1Region3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText1Region3KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText1Region3.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText1Region3.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText1Region3.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText1Region3, "" + evt.getKeyChar());
+                if (evaluarAccion(0, 6, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 0, 6, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText1Region3, "" + evt.getKeyChar(), 0, 6);
 
-            } else if (jText1Region3.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText1Region3KeyTyped
 
     private void jText2Region3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText2Region3KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText2Region3.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText2Region3.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText2Region3.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText2Region3, "" + evt.getKeyChar());
+                if (evaluarAccion(0, 7, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 0, 7, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText2Region3, "" + evt.getKeyChar(), 0, 7);
 
-            } else if (jText2Region3.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText2Region3KeyTyped
 
     private void jText3Region3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText3Region3KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText3Region3.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText3Region3.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText3Region3.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText3Region3, "" + evt.getKeyChar());
+                if (evaluarAccion(0, 8, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 0, 8, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText3Region3, "" + evt.getKeyChar(), 0, 8);
 
-            } else if (jText3Region3.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText3Region3KeyTyped
 
     private void jText4Region3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText4Region3KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText4Region3.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText4Region3.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText4Region3.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText4Region3, "" + evt.getKeyChar());
+                if (evaluarAccion(1, 6, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 1, 6, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText4Region3, "" + evt.getKeyChar(), 1, 6);
 
-            } else if (jText4Region3.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText4Region3KeyTyped
 
     private void jText5Region3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText5Region3KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText5Region3.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText5Region3.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText5Region3.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText5Region3, "" + evt.getKeyChar());
+                if (evaluarAccion(1, 7, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 1, 7, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText5Region3, "" + evt.getKeyChar(), 1, 7);
 
-            } else if (jText5Region3.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText5Region3KeyTyped
 
     private void jText6Region3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region3KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText6Region3.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText6Region3.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText6Region3.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText6Region3, "" + evt.getKeyChar());
+                if (evaluarAccion(1, 8, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 1, 8, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText6Region3, "" + evt.getKeyChar(), 1, 8);
 
-            } else if (jText6Region3.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText6Region3KeyTyped
 
     private void jText7Region3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region3KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText7Region3.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText7Region3.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText7Region3.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
                 if (evaluarAccion(2, 6, "" + evt.getKeyChar())) {
-                    almacenarAccionDeshacer(this.jText7Region3, "" + evt.getKeyChar());
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 2, 6, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText7Region3, "" + evt.getKeyChar(), 2, 6);
 
                 } else {
                     evt.consume();
                 }
-                almacenarAccionDeshacer(this.jText7Region3, "" + evt.getKeyChar());
 
-            } else if (jText7Region3.getText().equals("")) {
-                System.out.println("es vacio");
             }
         }
     }//GEN-LAST:event_jText7Region3KeyTyped
 
     private void jText8Region3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region3KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText8Region3.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText8Region3.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText8Region3.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText8Region3, "" + evt.getKeyChar());
+                if (evaluarAccion(2, 7, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 2, 7, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText8Region3, "" + evt.getKeyChar(), 2, 7);
 
-            } else if (jText8Region3.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText8Region3KeyTyped
 
     private void jText9Region3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region3KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText9Region3.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText9Region3.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText9Region3.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
                 if (evaluarAccion(2, 8, "" + evt.getKeyChar())) {
-                    almacenarAccionDeshacer(this.jText9Region3, "" + evt.getKeyChar());
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 2, 8, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText9Region3, "" + evt.getKeyChar(), 2, 8);
+
                 } else {
                     evt.consume();
                 }
 
-            } else if (jText9Region3.getText().equals("")) {
-                System.out.println("es vacio");
             }
         }
     }//GEN-LAST:event_jText9Region3KeyTyped
 
     private void jText1Region4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText1Region4KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText1Region4.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText1Region4.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText1Region4.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText1Region4, "" + evt.getKeyChar());
+                if (evaluarAccion(3, 0, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 3, 0, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText1Region4, "" + evt.getKeyChar(), 3, 0);
 
-            } else if (jText1Region4.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText1Region4KeyTyped
 
     private void jText2Region4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText2Region4KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText2Region4.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText2Region4.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText2Region4.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText2Region4, "" + evt.getKeyChar());
+                if (evaluarAccion(3, 1, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 3, 1, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText2Region4, "" + evt.getKeyChar(), 3, 1);
 
-            } else if (jText2Region4.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText2Region4KeyTyped
 
     private void jText3Region4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText3Region4KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText3Region4.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText3Region4.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText3Region4.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText3Region4, "" + evt.getKeyChar());
+                if (evaluarAccion(3, 2, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 3, 2, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText3Region4, "" + evt.getKeyChar(), 3, 2);
 
-            } else if (jText3Region4.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText3Region4KeyTyped
 
     private void jText4Region4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText4Region4KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText4Region4.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText4Region4.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText4Region4.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText4Region4, "" + evt.getKeyChar());
+                if (evaluarAccion(3, 3, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 3, 3, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText4Region4, "" + evt.getKeyChar(), 3, 3);
 
-            } else if (jText4Region4.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText4Region4KeyTyped
 
     private void jText5Region4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText5Region4KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText5Region4.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText5Region4.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText5Region4.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText5Region4, "" + evt.getKeyChar());
+                if (evaluarAccion(3, 4, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 3, 4, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText5Region4, "" + evt.getKeyChar(), 3, 4);
+                } else {
+                    evt.consume();
+                }
 
-            } else if (jText5Region4.getText().equals("")) {
-                System.out.println("es vacio");
             }
         }
     }//GEN-LAST:event_jText5Region4KeyTyped
 
     private void jText6Region4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region4KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText6Region4.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText6Region4.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        } //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText6Region4.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText6Region4, "" + evt.getKeyChar());
+                if (evaluarAccion(3, 5, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 3, 5, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText6Region4, "" + evt.getKeyChar(), 3, 5);
 
-            } else if (jText6Region4.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText6Region4KeyTyped
 
     private void jText7Region4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region4KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText7Region4.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText7Region4.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText7Region4.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText7Region4, "" + evt.getKeyChar());
+                if (evaluarAccion(3, 6, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 3, 6, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText7Region4, "" + evt.getKeyChar(), 3, 6);
 
-            } else if (jText7Region4.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText7Region4KeyTyped
 
     private void jText8Region4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region4KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText8Region4.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText8Region4.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText8Region4.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText8Region4, "" + evt.getKeyChar());
+                if (evaluarAccion(3, 7, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 3, 7, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText8Region4, "" + evt.getKeyChar(), 3, 7);
 
-            } else if (jText8Region4.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText8Region4KeyTyped
 
     private void jText9Region4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region4KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText9Region4.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText9Region4.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText9Region4.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText9Region4, "" + evt.getKeyChar());
+                if (evaluarAccion(3, 8, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 3, 8, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText9Region4, "" + evt.getKeyChar(), 3, 8);
 
-            } else if (jText9Region4.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
 
     }//GEN-LAST:event_jText9Region4KeyTyped
 
     private void jText1Region5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText1Region5KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText1Region5.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText1Region5.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText1Region5.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText1Region5, "" + evt.getKeyChar());
+                if (evaluarAccion(4, 0, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 4, 0, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText1Region5, "" + evt.getKeyChar(), 4, 0);
 
-            } else if (jText1Region5.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText1Region5KeyTyped
 
     private void jText2Region5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText2Region5KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText2Region5.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText2Region5.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText2Region5.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText2Region5, "" + evt.getKeyChar());
+                if (evaluarAccion(4, 1, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 4, 1, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText2Region5, "" + evt.getKeyChar(), 4, 1);
 
-            } else if (jText2Region5.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText2Region5KeyTyped
 
     private void jText3Region5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText3Region5KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText3Region5.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText3Region5.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText3Region5.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText3Region5, "" + evt.getKeyChar());
+                if (evaluarAccion(4, 2, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 4, 2, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText3Region5, "" + evt.getKeyChar(), 4, 2);
 
-            } else if (jText3Region5.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
         }
     }//GEN-LAST:event_jText3Region5KeyTyped
 
     private void jText4Region5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText4Region5KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-        }
-        if (jText4Region5.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText4Region5.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText4Region5.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText4Region5, "" + evt.getKeyChar());
+                if (evaluarAccion(4, 3, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 4, 3, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText4Region5, "" + evt.getKeyChar(), 4, 3);
 
-            } else if (jText4Region5.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+                }
+
             }
 
         }    }//GEN-LAST:event_jText4Region5KeyTyped
 
     private void jText5Region5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText5Region5KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText5Region5.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText5Region5.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText5Region5.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText5Region5, "" + evt.getKeyChar());
+                if (evaluarAccion(4, 4, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 4, 4, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText5Region5, "" + evt.getKeyChar(), 4, 4);
 
-            } else if (jText5Region5.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
-
         }    }//GEN-LAST:event_jText5Region5KeyTyped
 
     private void jText6Region5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region5KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText6Region5.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText6Region5.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText6Region5.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText6Region5, "" + evt.getKeyChar());
+                if (evaluarAccion(4, 5, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 4, 5, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText6Region5, "" + evt.getKeyChar(), 4, 5);
 
-            } else if (jText6Region5.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
 
         }    }//GEN-LAST:event_jText6Region5KeyTyped
 
     private void jText7Region5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region5KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText7Region5.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText7Region5.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText7Region5.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText7Region5, "" + evt.getKeyChar());
+                if (evaluarAccion(4, 6, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 4, 6, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText7Region5, "" + evt.getKeyChar(), 4, 6);
 
-            } else if (jText7Region5.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
-
         }    }//GEN-LAST:event_jText7Region5KeyTyped
 
     private void jText8Region5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region5KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText8Region5.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText8Region5.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText8Region5.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText8Region5, "" + evt.getKeyChar());
+                if (evaluarAccion(4, 7, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 4, 7, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText8Region5, "" + evt.getKeyChar(), 4, 7);
 
-            } else if (jText8Region5.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
 
         }    }//GEN-LAST:event_jText8Region5KeyTyped
 
     private void jText9Region5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region5KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText9Region5.getText().length() == 1) {
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText9Region5.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText9Region5.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText9Region5, "" + evt.getKeyChar());
+                if (evaluarAccion(4, 8, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 4, 8, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText9Region5, "" + evt.getKeyChar(), 4, 8);
 
-            } else if (jText9Region5.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
-
         }    }//GEN-LAST:event_jText9Region5KeyTyped
 
     private void jText1Region6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText1Region6KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText1Region6.getText().length() == 1) {
+        //condicion para eliminjText1Region6KeyTyped(java.awt.event.KeyEvent evt) {                                       
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText1Region6.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText1Region6.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText1Region6, "" + evt.getKeyChar());
+                if (evaluarAccion(5, 0, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 5, 0, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText1Region6, "" + evt.getKeyChar(), 5, 0);
 
-            } else if (jText1Region6.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
-
         }
-
     }//GEN-LAST:event_jText1Region6KeyTyped
 
     private void jText2Region6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText2Region6KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText2Region6.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText2Region6.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText2Region6.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText2Region6, "" + evt.getKeyChar());
+                if (evaluarAccion(5, 1, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 5, 1, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText2Region6, "" + evt.getKeyChar(), 5, 1);
 
-            } else if (jText2Region6.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
         }
     }//GEN-LAST:event_jText2Region6KeyTyped
 
     private void jText3Region6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText3Region6KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText3Region6.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText3Region6.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText3Region6.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText3Region6, "" + evt.getKeyChar());
+                if (evaluarAccion(5, 2, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 5, 2, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText3Region6, "" + evt.getKeyChar(), 5, 2);
 
-            } else if (jText3Region6.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
 
 
         }    }//GEN-LAST:event_jText3Region6KeyTyped
 
     private void jText4Region6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText4Region6KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText4Region6.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText4Region6.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText4Region6.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText4Region6, "" + evt.getKeyChar());
+                if (evaluarAccion(5, 3, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 5, 3, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText4Region6, "" + evt.getKeyChar(), 5, 3);
 
-            } else if (jText4Region6.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
-
         }
     }//GEN-LAST:event_jText4Region6KeyTyped
 
     private void jText5Region6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText5Region6KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText5Region6.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText5Region6.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText5Region6.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText5Region6, "" + evt.getKeyChar());
+                if (evaluarAccion(5, 4, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 5, 4, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText5Region6, "" + evt.getKeyChar(), 5, 4);
 
-            } else if (jText5Region6.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
 
         }    }//GEN-LAST:event_jText5Region6KeyTyped
 
     private void jText6Region6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region6KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText6Region6.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText6Region6.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText6Region6.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText6Region6, "" + evt.getKeyChar());
+                if (evaluarAccion(5, 5, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 5, 5, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText6Region6, "" + evt.getKeyChar(), 5, 5);
 
-            } else if (jText6Region6.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
-
         }
     }//GEN-LAST:event_jText6Region6KeyTyped
 
     private void jText7Region6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region6KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText7Region6.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText7Region6.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText7Region6.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText7Region6, "" + evt.getKeyChar());
+                if (evaluarAccion(5, 6, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 5, 6, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText7Region6, "" + evt.getKeyChar(), 5, 6);
 
-            } else if (jText7Region6.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
+
         }    }//GEN-LAST:event_jText7Region6KeyTyped
 
     private void jText8Region6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region6KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText8Region6.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText8Region6.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText8Region6.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText8Region6, "" + evt.getKeyChar());
+                if (evaluarAccion(5, 7, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 5, 7, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText8Region6, "" + evt.getKeyChar(), 5, 7);
 
-            } else if (jText8Region6.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
         }    }//GEN-LAST:event_jText8Region6KeyTyped
 
     private void jText9Region6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region6KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText9Region6.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText9Region6.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        } //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText9Region6.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText9Region6, "" + evt.getKeyChar());
+                if (evaluarAccion(5, 8, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 5, 8, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText9Region6, "" + evt.getKeyChar(), 5, 8);
 
-            } else if (jText9Region6.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
+
         }    }//GEN-LAST:event_jText9Region6KeyTyped
 
     private void jText1Region7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText1Region7KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText1Region7.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText1Region7.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        } //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText1Region7.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText1Region7, "" + evt.getKeyChar());
+                if (evaluarAccion(6, 0, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 6, 0, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText1Region7, "" + evt.getKeyChar(), 6, 0);
 
-            } else if (jText1Region7.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
         }
     }//GEN-LAST:event_jText1Region7KeyTyped
 
     private void jText2Region7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText2Region7KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText2Region7.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText2Region7.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText2Region7.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText2Region7, "" + evt.getKeyChar());
+                if (evaluarAccion(6, 1, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 6, 1, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText2Region7, "" + evt.getKeyChar(), 6, 1);
 
-            } else if (jText2Region7.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
         }
     }//GEN-LAST:event_jText2Region7KeyTyped
 
     private void jText3Region7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText3Region7KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText3Region7.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText3Region7.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText3Region7.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText3Region7, "" + evt.getKeyChar());
+                if (evaluarAccion(6, 2, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 6, 2, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText3Region7, "" + evt.getKeyChar(), 6, 2);
 
-            } else if (jText3Region7.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
 
         }    }//GEN-LAST:event_jText3Region7KeyTyped
 
     private void jText4Region7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText4Region7KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText4Region7.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText4Region7.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText4Region7.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText4Region7, "" + evt.getKeyChar());
+                if (evaluarAccion(6, 3, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 6, 3, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText4Region7, "" + evt.getKeyChar(), 6, 3);
 
-            } else if (jText4Region7.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
 
         }    }//GEN-LAST:event_jText4Region7KeyTyped
 
     private void jText5Region7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText5Region7KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText5Region7.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText5Region7.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText5Region7.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText5Region7, "" + evt.getKeyChar());
+                if (evaluarAccion(6, 4, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 6, 4, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText5Region7, "" + evt.getKeyChar(), 6, 4);
 
-            } else if (jText5Region7.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
+
         }    }//GEN-LAST:event_jText5Region7KeyTyped
 
     private void jText6Region7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region7KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText6Region7.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText6Region7.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText6Region7.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText6Region7, "" + evt.getKeyChar());
+                if (evaluarAccion(6, 5, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 6, 5, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText6Region7, "" + evt.getKeyChar(), 6, 5);
 
-            } else if (jText6Region7.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
+
         }    }//GEN-LAST:event_jText6Region7KeyTyped
 
     private void jText7Region7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region7KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText8Region7.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText7Region7.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText7Region7.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText7Region7, "" + evt.getKeyChar());
+                if (evaluarAccion(6, 6, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 6, 6, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText7Region7, "" + evt.getKeyChar(), 6, 6);
 
-            } else if (jText7Region7.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
         }    }//GEN-LAST:event_jText7Region7KeyTyped
 
     private void jText8Region7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region7KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText8Region7.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText8Region7.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText8Region7.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText8Region7, "" + evt.getKeyChar());
+                if (evaluarAccion(6, 7, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 6, 7, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText8Region7, "" + evt.getKeyChar(), 6, 7);
 
-            } else if (jText8Region7.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
         }
     }//GEN-LAST:event_jText8Region7KeyTyped
 
     private void jText9Region7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region7KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText9Region7.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText9Region7.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText9Region7.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText9Region7, "" + evt.getKeyChar());
+                if (evaluarAccion(6, 8, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 6, 8, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText9Region7, "" + evt.getKeyChar(), 6, 8);
 
-            } else if (jText9Region7.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
+
         }    }//GEN-LAST:event_jText9Region7KeyTyped
 
     private void jText1Region8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText1Region8KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText1Region8.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText1Region8.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText1Region8.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText1Region8, "" + evt.getKeyChar());
+                if (evaluarAccion(7, 0, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 7, 0, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText1Region8, "" + evt.getKeyChar(), 7, 0);
 
-            } else if (jText1Region8.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
+
         }
     }//GEN-LAST:event_jText1Region8KeyTyped
 
     private void jText2Region8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText2Region8KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText2Region8.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText2Region8.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText2Region8.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText2Region8, "" + evt.getKeyChar());
+                if (evaluarAccion(7, 1, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 7, 1, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText2Region8, "" + evt.getKeyChar(), 7, 1);
 
-            } else if (jText2Region8.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
         }
+
     }//GEN-LAST:event_jText2Region8KeyTyped
 
     private void jText3Region8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText3Region8KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText3Region8.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText3Region8.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText3Region8.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText3Region8, "" + evt.getKeyChar());
+                if (evaluarAccion(7, 2, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 7, 2, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText3Region8, "" + evt.getKeyChar(), 7, 2);
 
-            } else if (jText3Region8.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
         }
     }//GEN-LAST:event_jText3Region8KeyTyped
 
     private void jText4Region8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText4Region8KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText4Region8.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText4Region8.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText4Region8.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText4Region8, "" + evt.getKeyChar());
+                if (evaluarAccion(7, 3, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 7, 3, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText4Region8, "" + evt.getKeyChar(), 7, 3);
 
-            } else if (jText4Region8.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
         }
     }//GEN-LAST:event_jText4Region8KeyTyped
 
     private void jText5Region8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText5Region8KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText5Region8.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText5Region8.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText5Region8.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText5Region8, "" + evt.getKeyChar());
+                if (evaluarAccion(7, 4, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 7, 4, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText5Region8, "" + evt.getKeyChar(), 7, 4);
 
-            } else if (jText5Region8.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
         }
     }//GEN-LAST:event_jText5Region8KeyTyped
 
     private void jText6Region8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region8KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText6Region8.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText6Region8.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText6Region8.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText6Region8, "" + evt.getKeyChar());
+                if (evaluarAccion(7, 5, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 7, 5, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText6Region8, "" + evt.getKeyChar(), 7, 5);
 
-            } else if (jText6Region8.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
         }
     }//GEN-LAST:event_jText6Region8KeyTyped
 
     private void jText7Region8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region8KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText7Region8.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
-        if (jText7Region8.getText().length() == 1) {
-            evt.consume();
-        }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
-        if (jText1Region8.getText().isEmpty()) {
-
-            if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
-
-                almacenarAccionDeshacer(this.jText1Region8, "" + evt.getKeyChar());
-
-            } else if (jText1Region8.getText().equals("")) {
-                System.out.println("es vacio");
-            }
-        }   //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText7Region8.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText7Region8, "" + evt.getKeyChar());
+                if (evaluarAccion(7, 7, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 7, 7, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText7Region8, "" + evt.getKeyChar(), 7, 7);
 
-            } else if (jText7Region8.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
         }
     }//GEN-LAST:event_jText7Region8KeyTyped
 
     private void jText8Region8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region8KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText8Region8.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText8Region8.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText8Region8.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText8Region8, "" + evt.getKeyChar());
+                if (evaluarAccion(7, 7, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 7, 7, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText8Region8, "" + evt.getKeyChar(), 7, 7);
 
-            } else if (jText8Region8.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
         }
     }//GEN-LAST:event_jText8Region8KeyTyped
 
     private void jText9Region8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region8KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText9Region8.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText9Region8.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText9Region8.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText9Region8, "" + evt.getKeyChar());
+                if (evaluarAccion(7, 8, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 7, 8, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText9Region8, "" + evt.getKeyChar(), 7, 8);
 
-            } else if (jText9Region8.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
         }
     }//GEN-LAST:event_jText9Region8KeyTyped
 
     private void jText1Region9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText1Region9KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText1Region9.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText1Region9.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText1Region9.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText1Region9, "" + evt.getKeyChar());
+                if (evaluarAccion(8, 0, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 8, 0, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText1Region9, "" + evt.getKeyChar(), 8, 0);
 
-            } else if (jText1Region9.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
         }
     }//GEN-LAST:event_jText1Region9KeyTyped
 
     private void jText2Region9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText2Region9KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText2Region9.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText2Region9.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText2Region9.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText2Region9, "" + evt.getKeyChar());
+                if (evaluarAccion(8, 1, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 8, 1, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText2Region9, "" + evt.getKeyChar(), 8, 1);
 
-            } else if (jText2Region9.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
-
         }    }//GEN-LAST:event_jText2Region9KeyTyped
 
     private void jText3Region9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText3Region9KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText3Region9.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText3Region9.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText3Region9.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText3Region9, "" + evt.getKeyChar());
+                if (evaluarAccion(8, 2, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 8, 2, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText3Region9, "" + evt.getKeyChar(), 8, 2);
 
-            } else if (jText3Region9.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
 
         }    }//GEN-LAST:event_jText3Region9KeyTyped
 
     private void jText4Region9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText4Region9KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText4Region9.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText4Region9.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText4Region9.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText4Region9, "" + evt.getKeyChar());
+                if (evaluarAccion(8, 3, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 8, 3, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText4Region9, "" + evt.getKeyChar(), 8, 3);
 
-            } else if (jText4Region9.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
         }
     }//GEN-LAST:event_jText4Region9KeyTyped
 
     private void jText5Region9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText5Region9KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText5Region9.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText5Region9.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText5Region9.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText5Region9, "" + evt.getKeyChar());
+                if (evaluarAccion(8, 4, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 8, 4, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText5Region9, "" + evt.getKeyChar(), 8, 4);
 
-            } else if (jText5Region9.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
         }
     }//GEN-LAST:event_jText5Region9KeyTyped
 
     private void jText6Region9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region9KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText6Region9.getText().length() == 1) {
+       //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText6Region9.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText6Region9.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText6Region9, "" + evt.getKeyChar());
+                if (evaluarAccion(8, 5, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 8, 5, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText6Region9, "" + evt.getKeyChar(), 8, 5);
 
-            } else if (jText6Region9.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
         }
     }//GEN-LAST:event_jText6Region9KeyTyped
 
     private void jText7Region9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region9KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText7Region9.getText().length() == 1) {
+        //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText7Region9.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText7Region9.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText7Region9, "" + evt.getKeyChar());
+                if (evaluarAccion(8,6, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 8, 6, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText7Region9, "" + evt.getKeyChar(), 8,6);
 
-            } else if (jText7Region9.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
         }
     }//GEN-LAST:event_jText7Region9KeyTyped
 
     private void jText8Region9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region9KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText8Region9.getText().length() == 1) {
+         //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText8Region9.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText8Region9.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText8Region9, "" + evt.getKeyChar());
+                if (evaluarAccion(8, 7, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 8, 7, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText8Region9, "" + evt.getKeyChar(), 8, 7);
 
-            } else if (jText8Region9.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
         }
     }//GEN-LAST:event_jText8Region9KeyTyped
 
     private void jText9Region9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region9KeyTyped
-        if (!Character.isDigit(evt.getKeyChar())) {
-            evt.consume();
-        }
-        if (jText9Region9.getText().length() == 1) {
+         //condicion para elimiar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText9Region9.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
 
-        if (evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-        //condicion para almacer accion en la pila
+        //condicion para almacer accion 
         if (jText9Region9.getText().isEmpty()) {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                almacenarAccionDeshacer(this.jText9Region9, "" + evt.getKeyChar());
+                if (evaluarAccion(8, 8, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 8, 8, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText9Region9, "" + evt.getKeyChar(), 8, 8);
 
-            } else if (jText9Region9.getText().equals("")) {
-                System.out.println("es vacio");
+                } else {
+                    evt.consume();
+
+                }
             }
         }
     }//GEN-LAST:event_jText9Region9KeyTyped
