@@ -3448,6 +3448,7 @@ public class Sudoku extends javax.swing.JFrame {
             var accion = deshacer.pop();
             rehacer.push(accion);//antes de deshacer una accion ponemos esa accion en la pila de rehacer
             accion.getCampo().setText("");
+            sudokuPartida[accion.getFila()][accion.getColumna()]="";
             almacenarHistorial("DESHACER", accion.getFila(), accion.getColumna(), accion.getValor());
         }
 
@@ -3481,9 +3482,9 @@ public class Sudoku extends javax.swing.JFrame {
 
     private void jText1Region1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText1Region1KeyPressed
         var valor = jText1Region1.getText();
-       
+
         if (jText1Region1.isEditable() && !jText1Region1.getText().isEmpty()) {
-           
+
             if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
                 eliminarJugadaSudokuPartida(this.jText1Region1, 0, 0, "" + evt.getKeyChar());
             }
@@ -4344,6 +4345,7 @@ public class Sudoku extends javax.swing.JFrame {
     private void almacenarJugadaValida(JTextField campo, String valor, int fila, int columna) {
         Accion a = new Accion(campo, valor, fila, columna);
         deshacer.push(a);//almacenamos en la pila deshacer la jugada valida
+        sudokuPartida[fila][columna] = valor;
         verificarPartida();
 
         System.out.println(deshacer.toString());//mostramos el estado de la pila
@@ -4585,6 +4587,7 @@ public class Sudoku extends javax.swing.JFrame {
         if (partidaCompleta()) {
 
             JOptionPane.showMessageDialog(rootPane, "Felicitiaciones has terminado el sudoku con exito!", "Felicitaciones", JOptionPane.INFORMATION_MESSAGE);
+
         } else {
             System.out.println("no has terminado la partida");
         }
@@ -4592,8 +4595,15 @@ public class Sudoku extends javax.swing.JFrame {
 
     private boolean partidaCompleta() {
 
+        System.out.println("VERIFICANDO PARTIDA");
         for (int f = 0; f < sudokuPartida.length; f++) {
+           
             for (int c = 0; c < sudokuPartida[0].length; c++) {
+                System.out.println(""
+                        + "sudoku partida :[" + f + "]" + "[" + c + "]="+sudokuPartida[f][c]
+                        +" Es igual?: "
+                        + "sudoku respuesta :[" + f + "]" + "[" + c + "]="+sudokuRespuesta[f][c]
+                        );
                 if (!sudokuPartida[f][c].equals(sudokuRespuesta[f][c])) {
                     return false;
                 }
@@ -4651,7 +4661,6 @@ public class Sudoku extends javax.swing.JFrame {
 //                + ": " + rehacer.peek().getColumna());
 
         sudokuPartida[f][c] = "";
-
 
     }
 
