@@ -2356,10 +2356,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(3, 0, "" + evt.getKeyChar())) {
+                if (evaluarAccion(3, 3, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 3, 0, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText1Region5, "" + evt.getKeyChar(), 3, 0);
+                    almacenarHistorial("INGRESAR VALOR", 3, 3, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText1Region5, "" + evt.getKeyChar(), 3, 3);
 
                 } else {
                     evt.consume();
@@ -2380,10 +2380,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(3, 1, "" + evt.getKeyChar())) {
+                if (evaluarAccion(3, 4, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 3, 1, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText2Region5, "" + evt.getKeyChar(), 3, 1);
+                    almacenarHistorial("INGRESAR VALOR", 3, 4, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText2Region5, "" + evt.getKeyChar(), 3, 4);
 
                 } else {
                     evt.consume();
@@ -2404,9 +2404,9 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(3, 2, "" + evt.getKeyChar())) {
+                if (evaluarAccion(3, 5, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 3, 2, "" + evt.getKeyChar());
+                    almacenarHistorial("INGRESAR VALOR", 3, 5, "" + evt.getKeyChar());
                     almacenarJugadaValida(this.jText3Region5, "" + evt.getKeyChar(), 3, 2);
 
                 } else {
@@ -2499,10 +2499,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(4, 6, "" + evt.getKeyChar())) {
+                if (evaluarAccion(5, 3, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 4, 6, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText7Region5, "" + evt.getKeyChar(), 4, 6);
+                    almacenarHistorial("INGRESAR VALOR", 5, 3, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText7Region5, "" + evt.getKeyChar(), 5, 3);
 
                 } else {
                     evt.consume();
@@ -2522,10 +2522,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(4, 7, "" + evt.getKeyChar())) {
+                if (evaluarAccion(5, 4, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 4, 7, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText8Region5, "" + evt.getKeyChar(), 4, 7);
+                    almacenarHistorial("INGRESAR VALOR", 5, 4, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText8Region5, "" + evt.getKeyChar(),  5, 4);
 
                 } else {
                     evt.consume();
@@ -2546,10 +2546,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(4, 8, "" + evt.getKeyChar())) {
+                if (evaluarAccion(5, 5, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 4, 8, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText9Region5, "" + evt.getKeyChar(), 4, 8);
+                    almacenarHistorial("INGRESAR VALOR", 5, 5, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText9Region5, "" + evt.getKeyChar(), 5, 5);
 
                 } else {
                     evt.consume();
@@ -2570,10 +2570,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(5, 0, "" + evt.getKeyChar())) {
+                if (evaluarAccion(3, 6, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 5, 0, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText1Region6, "" + evt.getKeyChar(), 5, 0);
+                    almacenarHistorial("INGRESAR VALOR", 3, 6, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText1Region6, "" + evt.getKeyChar(), 3, 6);
 
                 } else {
                     evt.consume();
@@ -2594,10 +2594,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(5, 1, "" + evt.getKeyChar())) {
+                if (evaluarAccion(3, 7, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 5, 1, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText2Region6, "" + evt.getKeyChar(), 5, 1);
+                    almacenarHistorial("INGRESAR VALOR", 3, 7, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText2Region6, "" + evt.getKeyChar(), 3, 7);
 
                 } else {
                     evt.consume();
@@ -2618,10 +2618,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(5, 2, "" + evt.getKeyChar())) {
+                if (evaluarAccion(3, 8, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 5, 2, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText3Region6, "" + evt.getKeyChar(), 5, 2);
+                    almacenarHistorial("INGRESAR VALOR",3, 8, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText3Region6, "" + evt.getKeyChar(),3, 8);
 
                 } else {
                     evt.consume();
@@ -2643,10 +2643,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(5, 3, "" + evt.getKeyChar())) {
+                if (evaluarAccion(4,6, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 5, 3, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText4Region6, "" + evt.getKeyChar(), 5, 3);
+                    almacenarHistorial("INGRESAR VALOR", 4,6, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText4Region6, "" + evt.getKeyChar(), 4,6);
 
                 } else {
                     evt.consume();
@@ -2667,10 +2667,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(5, 4, "" + evt.getKeyChar())) {
+                if (evaluarAccion(4,7, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 5, 4, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText5Region6, "" + evt.getKeyChar(), 5, 4);
+                    almacenarHistorial("INGRESAR VALOR", 4,7, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText5Region6, "" + evt.getKeyChar(), 4,7);
 
                 } else {
                     evt.consume();
@@ -2691,10 +2691,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(5, 5, "" + evt.getKeyChar())) {
+                if (evaluarAccion(4,8, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 5, 5, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText6Region6, "" + evt.getKeyChar(), 5, 5);
+                    almacenarHistorial("INGRESAR VALOR", 4,8, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText6Region6, "" + evt.getKeyChar(), 4,8);
 
                 } else {
                     evt.consume();
@@ -2858,10 +2858,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(6, 3, "" + evt.getKeyChar())) {
+                if (evaluarAccion(7,0, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 6, 3, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText4Region7, "" + evt.getKeyChar(), 6, 3);
+                    almacenarHistorial("INGRESAR VALOR", 7,0, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText4Region7, "" + evt.getKeyChar(), 7,0);
 
                 } else {
                     evt.consume();
@@ -2882,10 +2882,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(6, 4, "" + evt.getKeyChar())) {
+                if (evaluarAccion(7,1, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 6, 4, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText5Region7, "" + evt.getKeyChar(), 6, 4);
+                    almacenarHistorial("INGRESAR VALOR", 7,1, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText5Region7, "" + evt.getKeyChar(), 7,1);
 
                 } else {
                     evt.consume();
@@ -2906,10 +2906,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(6, 5, "" + evt.getKeyChar())) {
+                if (evaluarAccion(7,2, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 6, 5, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText6Region7, "" + evt.getKeyChar(), 6, 5);
+                    almacenarHistorial("INGRESAR VALOR", 7,2, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText6Region7, "" + evt.getKeyChar(), 7,2);
 
                 } else {
                     evt.consume();
@@ -2930,10 +2930,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(6, 6, "" + evt.getKeyChar())) {
+                if (evaluarAccion(8,0, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 6, 6, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText7Region7, "" + evt.getKeyChar(), 6, 6);
+                    almacenarHistorial("INGRESAR VALOR", 8,0, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText7Region7, "" + evt.getKeyChar(), 8,0);
 
                 } else {
                     evt.consume();
@@ -2953,10 +2953,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(6, 7, "" + evt.getKeyChar())) {
+                if (evaluarAccion(8,1, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 6, 7, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText8Region7, "" + evt.getKeyChar(), 6, 7);
+                    almacenarHistorial("INGRESAR VALOR", 8,1, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText8Region7, "" + evt.getKeyChar(), 8,1);
 
                 } else {
                     evt.consume();
@@ -2977,10 +2977,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(6, 8, "" + evt.getKeyChar())) {
+                if (evaluarAccion(8,2, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 6, 8, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText9Region7, "" + evt.getKeyChar(), 6, 8);
+                    almacenarHistorial("INGRESAR VALOR", 8,2, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText9Region7, "" + evt.getKeyChar(), 8,2);
 
                 } else {
                     evt.consume();
@@ -3001,10 +3001,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(7, 0, "" + evt.getKeyChar())) {
+                if (evaluarAccion(6,3, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 7, 0, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText1Region8, "" + evt.getKeyChar(), 7, 0);
+                    almacenarHistorial("INGRESAR VALOR", 6,3, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText1Region8, "" + evt.getKeyChar(), 6,3);
 
                 } else {
                     evt.consume();
@@ -3026,10 +3026,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(7, 1, "" + evt.getKeyChar())) {
+                if (evaluarAccion(6,4, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 7, 1, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText2Region8, "" + evt.getKeyChar(), 7, 1);
+                    almacenarHistorial("INGRESAR VALOR", 6,4, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText2Region8, "" + evt.getKeyChar(), 6,4);
 
                 } else {
                     evt.consume();
@@ -3051,10 +3051,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(7, 2, "" + evt.getKeyChar())) {
+                if (evaluarAccion(6,5, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 7, 2, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText3Region8, "" + evt.getKeyChar(), 7, 2);
+                    almacenarHistorial("INGRESAR VALOR", 6,5, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText3Region8, "" + evt.getKeyChar(),6,5);
 
                 } else {
                     evt.consume();
@@ -3147,10 +3147,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(7, 7, "" + evt.getKeyChar())) {
+                if (evaluarAccion(8,3, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 7, 7, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText7Region8, "" + evt.getKeyChar(), 7, 7);
+                    almacenarHistorial("INGRESAR VALOR",8,3, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText7Region8, "" + evt.getKeyChar(),8,3);
 
                 } else {
                     evt.consume();
@@ -3171,10 +3171,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(7, 7, "" + evt.getKeyChar())) {
+                if (evaluarAccion(8,4, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 7, 7, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText8Region8, "" + evt.getKeyChar(), 7, 7);
+                    almacenarHistorial("INGRESAR VALOR",8,4, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText8Region8, "" + evt.getKeyChar(),8,4);
 
                 } else {
                     evt.consume();
@@ -3195,10 +3195,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(7, 8, "" + evt.getKeyChar())) {
+                if (evaluarAccion(8,5, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 7, 8, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText9Region8, "" + evt.getKeyChar(), 7, 8);
+                    almacenarHistorial("INGRESAR VALOR", 8,5, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText9Region8, "" + evt.getKeyChar(),8,5);
 
                 } else {
                     evt.consume();
@@ -3219,10 +3219,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(8, 0, "" + evt.getKeyChar())) {
+                if (evaluarAccion(6,6, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 8, 0, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText1Region9, "" + evt.getKeyChar(), 8, 0);
+                    almacenarHistorial("INGRESAR VALOR",6,6, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText1Region9, "" + evt.getKeyChar(),6,6);
 
                 } else {
                     evt.consume();
@@ -3243,10 +3243,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(8, 1, "" + evt.getKeyChar())) {
+                if (evaluarAccion(6,7, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 8, 1, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText2Region9, "" + evt.getKeyChar(), 8, 1);
+                    almacenarHistorial("INGRESAR VALOR",6,7, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText2Region9, "" + evt.getKeyChar(),6,7);
 
                 } else {
                     evt.consume();
@@ -3266,10 +3266,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(8, 2, "" + evt.getKeyChar())) {
+                if (evaluarAccion(6,8, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 8, 2, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText3Region9, "" + evt.getKeyChar(), 8, 2);
+                    almacenarHistorial("INGRESAR VALOR", 6,8, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText3Region9, "" + evt.getKeyChar(),6,8);
 
                 } else {
                     evt.consume();
@@ -3290,10 +3290,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(8, 3, "" + evt.getKeyChar())) {
+                if (evaluarAccion(7, 6, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 8, 3, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText4Region9, "" + evt.getKeyChar(), 8, 3);
+                    almacenarHistorial("INGRESAR VALOR",7,6, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText4Region9, "" + evt.getKeyChar(),7,6);
 
                 } else {
                     evt.consume();
@@ -3314,10 +3314,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(8, 4, "" + evt.getKeyChar())) {
+                if (evaluarAccion(7,7, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 8, 4, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText5Region9, "" + evt.getKeyChar(), 8, 4);
+                    almacenarHistorial("INGRESAR VALOR", 7,7, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText5Region9, "" + evt.getKeyChar(), 7,7);
 
                 } else {
                     evt.consume();
@@ -3338,10 +3338,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(8, 5, "" + evt.getKeyChar())) {
+                if (evaluarAccion(7,8, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 8, 5, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText6Region9, "" + evt.getKeyChar(), 8, 5);
+                    almacenarHistorial("INGRESAR VALOR",7,8, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText6Region9, "" + evt.getKeyChar(),7,8);
 
                 } else {
                     evt.consume();
@@ -3362,10 +3362,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(8, 6, "" + evt.getKeyChar())) {
+                if (evaluarAccion(8,6, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 8, 6, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText7Region9, "" + evt.getKeyChar(), 8, 6);
+                    almacenarHistorial("INGRESAR VALOR",8,6, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText7Region9, "" + evt.getKeyChar(),8,6);
 
                 } else {
                     evt.consume();
@@ -3388,8 +3388,8 @@ public class Sudoku extends javax.swing.JFrame {
 
                 if (evaluarAccion(8, 7, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 8, 7, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText8Region9, "" + evt.getKeyChar(), 8, 7);
+                    almacenarHistorial("INGRESAR VALOR",8, 7, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText8Region9, "" + evt.getKeyChar(), 8,7);
 
                 } else {
                     evt.consume();
