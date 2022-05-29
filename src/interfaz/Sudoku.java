@@ -3486,7 +3486,7 @@ public class Sudoku extends javax.swing.JFrame {
         if (jText1Region1.isEditable() && !jText1Region1.getText().isEmpty()) {
 
             if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
-                eliminarJugadaSudokuPartida(this.jText1Region1, 0, 0, "" + evt.getKeyChar());
+                eliminarJugadaSudokuPartida(this.jText1Region1, 0, 0,  valor);
             }
         }
     }//GEN-LAST:event_jText1Region1KeyPressed
@@ -3495,7 +3495,7 @@ public class Sudoku extends javax.swing.JFrame {
         var valor = jText2Region1.getText();
         if (jText2Region1.isEditable() && !jText2Region1.getText().isEmpty()) {
             if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
-                eliminarJugadaSudokuPartida(this.jText2Region1, 0, 1, "" + evt.getKeyChar());
+                eliminarJugadaSudokuPartida(this.jText2Region1, 0, 1,  valor);
             }
         }
     }//GEN-LAST:event_jText2Region1KeyPressed
