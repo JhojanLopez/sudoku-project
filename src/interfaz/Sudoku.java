@@ -30,6 +30,7 @@ public class Sudoku extends javax.swing.JFrame {
     private String sudokuPartida[][];
     private String sudokuRespuesta[][];
     private List<String> historial;
+    private Accion jugadaSugerida;
 
     public Sudoku() {
         this.archivoConfigPartida = "configuracionPartida.txt";
@@ -151,7 +152,7 @@ public class Sudoku extends javax.swing.JFrame {
         jText9Region9 = new javax.swing.JTextField();
         jPanelOpciones = new javax.swing.JPanel();
         jButtonDeshacer = new javax.swing.JButton();
-        jButtonComprobar = new javax.swing.JButton();
+        jButtonPista = new javax.swing.JButton();
         jButtonRehacer = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
 
@@ -208,6 +209,11 @@ public class Sudoku extends javax.swing.JFrame {
         jText1Region1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText1Region1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText1Region1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText1Region1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText1Region1MouseClicked(evt);
+            }
+        });
         jText1Region1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jText1Region1KeyPressed(evt);
@@ -220,6 +226,11 @@ public class Sudoku extends javax.swing.JFrame {
         jText2Region1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText2Region1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText2Region1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText2Region1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText2Region1MouseClicked(evt);
+            }
+        });
         jText2Region1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jText2Region1KeyPressed(evt);
@@ -232,6 +243,11 @@ public class Sudoku extends javax.swing.JFrame {
         jText3Region1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText3Region1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText3Region1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText3Region1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText3Region1MouseClicked(evt);
+            }
+        });
         jText3Region1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jText3Region1KeyPressed(evt);
@@ -244,6 +260,11 @@ public class Sudoku extends javax.swing.JFrame {
         jText4Region1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText4Region1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText4Region1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText4Region1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText4Region1MouseClicked(evt);
+            }
+        });
         jText4Region1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jText4Region1KeyPressed(evt);
@@ -256,6 +277,11 @@ public class Sudoku extends javax.swing.JFrame {
         jText5Region1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText5Region1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText5Region1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText5Region1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText5Region1MouseClicked(evt);
+            }
+        });
         jText5Region1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jText5Region1KeyPressed(evt);
@@ -268,6 +294,11 @@ public class Sudoku extends javax.swing.JFrame {
         jText6Region1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText6Region1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText6Region1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText6Region1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText6Region1MouseClicked(evt);
+            }
+        });
         jText6Region1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jText6Region1KeyPressed(evt);
@@ -280,7 +311,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText7Region1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText7Region1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText7Region1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText7Region1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText7Region1MouseClicked(evt);
+            }
+        });
         jText7Region1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText7Region1KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText7Region1KeyTyped(evt);
             }
@@ -289,7 +328,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText8Region1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText8Region1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText8Region1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText8Region1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText8Region1MouseClicked(evt);
+            }
+        });
         jText8Region1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText8Region1KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText8Region1KeyTyped(evt);
             }
@@ -298,7 +345,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText9Region1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText9Region1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText9Region1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText9Region1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText9Region1MouseClicked(evt);
+            }
+        });
         jText9Region1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText9Region1KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText9Region1KeyTyped(evt);
             }
@@ -352,7 +407,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText1Region2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText1Region2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText1Region2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText1Region2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText1Region2MouseClicked(evt);
+            }
+        });
         jText1Region2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText1Region2KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText1Region2KeyTyped(evt);
             }
@@ -361,7 +424,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText2Region2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText2Region2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText2Region2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText2Region2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText2Region2MouseClicked(evt);
+            }
+        });
         jText2Region2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText2Region2KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText2Region2KeyTyped(evt);
             }
@@ -370,7 +441,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText3Region2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText3Region2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText3Region2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText3Region2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText3Region2MouseClicked(evt);
+            }
+        });
         jText3Region2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText3Region2KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText3Region2KeyTyped(evt);
             }
@@ -379,7 +458,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText4Region2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText4Region2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText4Region2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText4Region2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText4Region2MouseClicked(evt);
+            }
+        });
         jText4Region2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText4Region2KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText4Region2KeyTyped(evt);
             }
@@ -388,7 +475,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText5Region2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText5Region2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText5Region2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText5Region2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText5Region2MouseClicked(evt);
+            }
+        });
         jText5Region2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText5Region2KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText5Region2KeyTyped(evt);
             }
@@ -397,7 +492,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText6Region2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText6Region2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText6Region2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText6Region2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText6Region2MouseClicked(evt);
+            }
+        });
         jText6Region2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText6Region2KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText6Region2KeyTyped(evt);
             }
@@ -406,7 +509,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText7Region2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText7Region2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText7Region2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText7Region2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText7Region2MouseClicked(evt);
+            }
+        });
         jText7Region2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText7Region2KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText7Region2KeyTyped(evt);
             }
@@ -415,7 +526,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText8Region2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText8Region2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText8Region2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText8Region2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText8Region2MouseClicked(evt);
+            }
+        });
         jText8Region2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText8Region2KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText8Region2KeyTyped(evt);
             }
@@ -424,7 +543,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText9Region2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText9Region2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText9Region2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText9Region2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText9Region2MouseClicked(evt);
+            }
+        });
         jText9Region2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText9Region2KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText9Region2KeyTyped(evt);
             }
@@ -476,7 +603,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText1Region3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText1Region3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText1Region3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText1Region3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText1Region3MouseClicked(evt);
+            }
+        });
         jText1Region3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText1Region3KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText1Region3KeyTyped(evt);
             }
@@ -485,7 +620,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText2Region3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText2Region3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText2Region3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText2Region3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText2Region3MouseClicked(evt);
+            }
+        });
         jText2Region3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText2Region3KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText2Region3KeyTyped(evt);
             }
@@ -494,7 +637,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText3Region3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText3Region3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText3Region3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText3Region3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText3Region3MouseClicked(evt);
+            }
+        });
         jText3Region3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText3Region3KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText3Region3KeyTyped(evt);
             }
@@ -503,7 +654,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText4Region3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText4Region3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText4Region3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText4Region3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText4Region3MouseClicked(evt);
+            }
+        });
         jText4Region3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText4Region3KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText4Region3KeyTyped(evt);
             }
@@ -512,7 +671,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText5Region3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText5Region3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText5Region3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText5Region3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText5Region3MouseClicked(evt);
+            }
+        });
         jText5Region3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText5Region3KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText5Region3KeyTyped(evt);
             }
@@ -521,7 +688,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText6Region3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText6Region3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText6Region3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText6Region3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText6Region3MouseClicked(evt);
+            }
+        });
         jText6Region3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText6Region3KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText6Region3KeyTyped(evt);
             }
@@ -530,7 +705,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText7Region3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText7Region3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText7Region3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText7Region3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText7Region3MouseClicked(evt);
+            }
+        });
         jText7Region3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText7Region3KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText7Region3KeyTyped(evt);
             }
@@ -539,7 +722,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText8Region3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText8Region3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText8Region3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText8Region3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText8Region3MouseClicked(evt);
+            }
+        });
         jText8Region3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText8Region3KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText8Region3KeyTyped(evt);
             }
@@ -548,7 +739,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText9Region3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText9Region3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText9Region3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText9Region3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText9Region3MouseClicked(evt);
+            }
+        });
         jText9Region3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText9Region3KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText9Region3KeyTyped(evt);
             }
@@ -602,7 +801,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText1Region4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText1Region4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText1Region4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText1Region4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText1Region4MouseClicked(evt);
+            }
+        });
         jText1Region4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText1Region4KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText1Region4KeyTyped(evt);
             }
@@ -611,7 +818,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText2Region4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText2Region4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText2Region4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText2Region4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText2Region4MouseClicked(evt);
+            }
+        });
         jText2Region4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText2Region4KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText2Region4KeyTyped(evt);
             }
@@ -620,7 +835,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText3Region4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText3Region4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText3Region4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText3Region4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText3Region4MouseClicked(evt);
+            }
+        });
         jText3Region4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText3Region4KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText3Region4KeyTyped(evt);
             }
@@ -629,7 +852,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText4Region4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText4Region4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText4Region4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText4Region4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText4Region4MouseClicked(evt);
+            }
+        });
         jText4Region4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText4Region4KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText4Region4KeyTyped(evt);
             }
@@ -638,7 +869,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText5Region4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText5Region4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText5Region4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText5Region4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText5Region4MouseClicked(evt);
+            }
+        });
         jText5Region4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText5Region4KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText5Region4KeyTyped(evt);
             }
@@ -647,7 +886,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText6Region4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText6Region4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText6Region4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText6Region4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText6Region4MouseClicked(evt);
+            }
+        });
         jText6Region4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText6Region4KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText6Region4KeyTyped(evt);
             }
@@ -656,7 +903,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText7Region4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText7Region4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText7Region4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText7Region4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText7Region4MouseClicked(evt);
+            }
+        });
         jText7Region4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText7Region4KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText7Region4KeyTyped(evt);
             }
@@ -665,7 +920,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText8Region4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText8Region4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText8Region4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText8Region4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText8Region4MouseClicked(evt);
+            }
+        });
         jText8Region4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText8Region4KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText8Region4KeyTyped(evt);
             }
@@ -674,7 +937,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText9Region4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText9Region4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText9Region4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText9Region4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText9Region4MouseClicked(evt);
+            }
+        });
         jText9Region4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText9Region4KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText9Region4KeyTyped(evt);
             }
@@ -728,7 +999,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText1Region5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText1Region5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText1Region5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText1Region5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText1Region5MouseClicked(evt);
+            }
+        });
         jText1Region5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText1Region5KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText1Region5KeyTyped(evt);
             }
@@ -737,7 +1016,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText2Region5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText2Region5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText2Region5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText2Region5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText2Region5MouseClicked(evt);
+            }
+        });
         jText2Region5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText2Region5KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText2Region5KeyTyped(evt);
             }
@@ -746,7 +1033,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText3Region5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText3Region5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText3Region5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText3Region5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText3Region5MouseClicked(evt);
+            }
+        });
         jText3Region5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText3Region5KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText3Region5KeyTyped(evt);
             }
@@ -755,7 +1050,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText4Region5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText4Region5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText4Region5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText4Region5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText4Region5MouseClicked(evt);
+            }
+        });
         jText4Region5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText4Region5KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText4Region5KeyTyped(evt);
             }
@@ -764,7 +1067,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText5Region5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText5Region5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText5Region5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText5Region5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText5Region5MouseClicked(evt);
+            }
+        });
         jText5Region5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText5Region5KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText5Region5KeyTyped(evt);
             }
@@ -773,7 +1084,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText6Region5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText6Region5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText6Region5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText6Region5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText6Region5MouseClicked(evt);
+            }
+        });
         jText6Region5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText6Region5KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText6Region5KeyTyped(evt);
             }
@@ -782,7 +1101,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText7Region5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText7Region5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText7Region5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText7Region5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText7Region5MouseClicked(evt);
+            }
+        });
         jText7Region5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText7Region5KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText7Region5KeyTyped(evt);
             }
@@ -791,7 +1118,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText8Region5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText8Region5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText8Region5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText8Region5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText8Region5MouseClicked(evt);
+            }
+        });
         jText8Region5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText8Region5KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText8Region5KeyTyped(evt);
             }
@@ -800,7 +1135,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText9Region5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText9Region5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText9Region5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText9Region5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText9Region5MouseClicked(evt);
+            }
+        });
         jText9Region5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText9Region5KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText9Region5KeyTyped(evt);
             }
@@ -854,7 +1197,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText1Region6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText1Region6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText1Region6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText1Region6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText1Region6MouseClicked(evt);
+            }
+        });
         jText1Region6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText1Region6KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText1Region6KeyTyped(evt);
             }
@@ -863,7 +1214,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText2Region6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText2Region6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText2Region6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText2Region6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText2Region6MouseClicked(evt);
+            }
+        });
         jText2Region6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText2Region6KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText2Region6KeyTyped(evt);
             }
@@ -872,7 +1231,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText3Region6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText3Region6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText3Region6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText3Region6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText3Region6MouseClicked(evt);
+            }
+        });
         jText3Region6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText3Region6KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText3Region6KeyTyped(evt);
             }
@@ -881,7 +1248,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText4Region6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText4Region6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText4Region6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText4Region6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText4Region6MouseClicked(evt);
+            }
+        });
         jText4Region6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText4Region6KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText4Region6KeyTyped(evt);
             }
@@ -890,7 +1265,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText5Region6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText5Region6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText5Region6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText5Region6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText5Region6MouseClicked(evt);
+            }
+        });
         jText5Region6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText5Region6KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText5Region6KeyTyped(evt);
             }
@@ -899,7 +1282,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText6Region6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText6Region6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText6Region6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText6Region6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText6Region6MouseClicked(evt);
+            }
+        });
         jText6Region6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText6Region6KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText6Region6KeyTyped(evt);
             }
@@ -908,7 +1299,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText7Region6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText7Region6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText7Region6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText7Region6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText7Region6MouseClicked(evt);
+            }
+        });
         jText7Region6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText7Region6KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText7Region6KeyTyped(evt);
             }
@@ -917,7 +1316,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText8Region6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText8Region6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText8Region6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText8Region6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText8Region6MouseClicked(evt);
+            }
+        });
         jText8Region6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText8Region6KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText8Region6KeyTyped(evt);
             }
@@ -926,7 +1333,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText9Region6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText9Region6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText9Region6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText9Region6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText9Region6MouseClicked(evt);
+            }
+        });
         jText9Region6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText9Region6KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText9Region6KeyTyped(evt);
             }
@@ -978,7 +1393,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText1Region7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText1Region7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText1Region7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText1Region7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText1Region7MouseClicked(evt);
+            }
+        });
         jText1Region7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText1Region7KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText1Region7KeyTyped(evt);
             }
@@ -987,7 +1410,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText2Region7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText2Region7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText2Region7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText2Region7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText2Region7MouseClicked(evt);
+            }
+        });
         jText2Region7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText2Region7KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText2Region7KeyTyped(evt);
             }
@@ -996,7 +1427,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText3Region7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText3Region7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText3Region7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText3Region7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText3Region7MouseClicked(evt);
+            }
+        });
         jText3Region7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText3Region7KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText3Region7KeyTyped(evt);
             }
@@ -1005,7 +1444,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText4Region7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText4Region7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText4Region7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText4Region7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText4Region7MouseClicked(evt);
+            }
+        });
         jText4Region7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText4Region7KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText4Region7KeyTyped(evt);
             }
@@ -1014,7 +1461,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText5Region7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText5Region7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText5Region7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText5Region7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText5Region7MouseClicked(evt);
+            }
+        });
         jText5Region7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText5Region7KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText5Region7KeyTyped(evt);
             }
@@ -1023,7 +1478,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText6Region7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText6Region7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText6Region7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText6Region7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText6Region7MouseClicked(evt);
+            }
+        });
         jText6Region7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText6Region7KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText6Region7KeyTyped(evt);
             }
@@ -1032,7 +1495,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText7Region7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText7Region7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText7Region7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText7Region7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText7Region7MouseClicked(evt);
+            }
+        });
         jText7Region7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText7Region7KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText7Region7KeyTyped(evt);
             }
@@ -1041,7 +1512,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText8Region7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText8Region7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText8Region7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText8Region7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText8Region7MouseClicked(evt);
+            }
+        });
         jText8Region7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText8Region7KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText8Region7KeyTyped(evt);
             }
@@ -1050,7 +1529,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText9Region7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText9Region7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText9Region7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText9Region7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText9Region7MouseClicked(evt);
+            }
+        });
         jText9Region7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText9Region7KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText9Region7KeyTyped(evt);
             }
@@ -1104,7 +1591,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText1Region8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText1Region8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText1Region8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText1Region8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText1Region8MouseClicked(evt);
+            }
+        });
         jText1Region8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText1Region8KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText1Region8KeyTyped(evt);
             }
@@ -1113,7 +1608,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText2Region8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText2Region8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText2Region8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText2Region8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText2Region8MouseClicked(evt);
+            }
+        });
         jText2Region8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText2Region8KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText2Region8KeyTyped(evt);
             }
@@ -1122,7 +1625,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText3Region8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText3Region8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText3Region8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText3Region8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText3Region8MouseClicked(evt);
+            }
+        });
         jText3Region8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText3Region8KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText3Region8KeyTyped(evt);
             }
@@ -1131,7 +1642,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText4Region8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText4Region8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText4Region8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText4Region8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText4Region8MouseClicked(evt);
+            }
+        });
         jText4Region8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText4Region8KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText4Region8KeyTyped(evt);
             }
@@ -1140,7 +1659,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText5Region8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText5Region8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText5Region8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText5Region8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText5Region8MouseClicked(evt);
+            }
+        });
         jText5Region8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText5Region8KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText5Region8KeyTyped(evt);
             }
@@ -1149,7 +1676,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText6Region8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText6Region8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText6Region8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText6Region8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText6Region8MouseClicked(evt);
+            }
+        });
         jText6Region8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText6Region8KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText6Region8KeyTyped(evt);
             }
@@ -1158,7 +1693,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText7Region8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText7Region8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText7Region8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText7Region8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText7Region8MouseClicked(evt);
+            }
+        });
         jText7Region8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText7Region8KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText7Region8KeyTyped(evt);
             }
@@ -1167,7 +1710,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText8Region8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText8Region8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText8Region8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText8Region8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText8Region8MouseClicked(evt);
+            }
+        });
         jText8Region8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText8Region8KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText8Region8KeyTyped(evt);
             }
@@ -1176,7 +1727,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText9Region8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText9Region8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText9Region8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText9Region8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText9Region8MouseClicked(evt);
+            }
+        });
         jText9Region8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText9Region8KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText9Region8KeyTyped(evt);
             }
@@ -1230,7 +1789,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText1Region9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText1Region9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText1Region9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText1Region9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText1Region9MouseClicked(evt);
+            }
+        });
         jText1Region9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText1Region9KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText1Region9KeyTyped(evt);
             }
@@ -1239,7 +1806,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText2Region9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText2Region9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText2Region9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText2Region9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText2Region9MouseClicked(evt);
+            }
+        });
         jText2Region9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText2Region9KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText2Region9KeyTyped(evt);
             }
@@ -1248,7 +1823,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText3Region9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText3Region9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText3Region9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText3Region9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText3Region9MouseClicked(evt);
+            }
+        });
         jText3Region9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText3Region9KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText3Region9KeyTyped(evt);
             }
@@ -1257,7 +1840,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText4Region9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText4Region9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText4Region9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText4Region9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText4Region9MouseClicked(evt);
+            }
+        });
         jText4Region9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText4Region9KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText4Region9KeyTyped(evt);
             }
@@ -1266,7 +1857,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText5Region9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText5Region9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText5Region9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText5Region9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText5Region9MouseClicked(evt);
+            }
+        });
         jText5Region9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText5Region9KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText5Region9KeyTyped(evt);
             }
@@ -1275,7 +1874,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText6Region9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText6Region9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText6Region9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText6Region9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText6Region9MouseClicked(evt);
+            }
+        });
         jText6Region9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText6Region9KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText6Region9KeyTyped(evt);
             }
@@ -1284,7 +1891,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText7Region9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText7Region9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText7Region9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText7Region9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText7Region9MouseClicked(evt);
+            }
+        });
         jText7Region9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText7Region9KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText7Region9KeyTyped(evt);
             }
@@ -1293,7 +1908,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText8Region9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText8Region9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText8Region9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText8Region9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText8Region9MouseClicked(evt);
+            }
+        });
         jText8Region9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText8Region9KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText8Region9KeyTyped(evt);
             }
@@ -1302,7 +1925,15 @@ public class Sudoku extends javax.swing.JFrame {
         jText9Region9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jText9Region9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText9Region9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jText9Region9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jText9Region9MouseClicked(evt);
+            }
+        });
         jText9Region9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText9Region9KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText9Region9KeyTyped(evt);
             }
@@ -1428,7 +2059,13 @@ public class Sudoku extends javax.swing.JFrame {
             }
         });
 
-        jButtonComprobar.setText("Comprobar");
+        jButtonPista.setText("Pista");
+        jButtonPista.setToolTipText("para usar la pista debes seleccionar algun campo");
+        jButtonPista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPistaActionPerformed(evt);
+            }
+        });
 
         jButtonRehacer.setText("Rehacer");
         jButtonRehacer.addActionListener(new java.awt.event.ActionListener() {
@@ -1446,9 +2083,9 @@ public class Sudoku extends javax.swing.JFrame {
             .addGroup(jPanelOpcionesLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(jButtonDeshacer)
-                .addGap(164, 164, 164)
-                .addComponent(jButtonComprobar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonPista, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(164, 164, 164)
                 .addComponent(jButtonRehacer)
                 .addGap(38, 38, 38))
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1460,7 +2097,7 @@ public class Sudoku extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanelOpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonDeshacer)
-                    .addComponent(jButtonComprobar)
+                    .addComponent(jButtonPista)
                     .addComponent(jButtonRehacer))
                 .addContainerGap())
         );
@@ -1642,30 +2279,6 @@ public class Sudoku extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jText6Region1KeyTyped
-
-    private void jText7Region1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region1KeyTyped
-        //condicion para eliminar la accion digitada
-        if (!Character.isDigit(evt.getKeyChar()) || jText7Region1.getText().length() == 1 || evt.getKeyChar() == '0') {
-            evt.consume();
-        }
-
-        //condicion para almacer accion 
-        if (jText7Region1.getText().isEmpty()) {
-
-            if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
-
-                if (evaluarAccion(2, 0, "" + evt.getKeyChar())) {
-                    //                 TIPO ACCION - POSICION - VALOR
-                    almacenarHistorial("INGRESAR VALOR", 2, 0, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText7Region1, "" + evt.getKeyChar(), 2, 0);
-
-                } else {
-                    evt.consume();
-                }
-
-            }
-        }
-    }//GEN-LAST:event_jText7Region1KeyTyped
 
     private void jText8Region1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region1KeyTyped
         //condicion para eliminar la accion digitada
@@ -3457,7 +4070,7 @@ public class Sudoku extends javax.swing.JFrame {
             var accion = deshacer.pop();
             rehacer.push(accion);//antes de deshacer una accion ponemos esa accion en la pila de rehacer
             accion.getCampo().setText("");
-            sudokuPartida[accion.getFila()][accion.getColumna()]="";
+            sudokuPartida[accion.getFila()][accion.getColumna()] = "";
             almacenarHistorial("DESHACER", accion.getFila(), accion.getColumna(), accion.getValor());
         }
 
@@ -3495,7 +4108,7 @@ public class Sudoku extends javax.swing.JFrame {
         if (jText1Region1.isEditable() && !jText1Region1.getText().isEmpty()) {
 
             if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
-                eliminarJugadaSudokuPartida(this.jText1Region1, 0, 0,  valor);
+                eliminarJugadaSudokuPartida(this.jText1Region1, 0, 0, valor);
             }
         }
     }//GEN-LAST:event_jText1Region1KeyPressed
@@ -3504,7 +4117,7 @@ public class Sudoku extends javax.swing.JFrame {
         var valor = jText2Region1.getText();
         if (jText2Region1.isEditable() && !jText2Region1.getText().isEmpty()) {
             if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
-                eliminarJugadaSudokuPartida(this.jText2Region1, 0, 1,  valor);
+                eliminarJugadaSudokuPartida(this.jText2Region1, 0, 1, valor);
             }
         }
     }//GEN-LAST:event_jText2Region1KeyPressed
@@ -3546,50 +4159,1564 @@ public class Sudoku extends javax.swing.JFrame {
 
         if (jText6Region1.isEditable() && !jText6Region1.getText().isEmpty()) {
             if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
-                eliminarJugadaSudokuPartida(this.jText6Region1, 1, 0, valor);
+                eliminarJugadaSudokuPartida(this.jText6Region1, 1, 2, valor);
             }
         }
     }//GEN-LAST:event_jText6Region1KeyPressed
 
+    private void jButtonPistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPistaActionPerformed
+
+        if (jugadaSugerida != null) {
+
+            sugerirJugada();
+        } else {
+
+            JOptionPane.showMessageDialog(rootPane, "Selecciona algun campo para obtener una jugada sugerida");
+        }
+
+
+    }//GEN-LAST:event_jButtonPistaActionPerformed
+
+    private void jText1Region1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText1Region1MouseClicked
+
+        var campo = this.jText1Region1;
+        if (campo.isEditable()) {
+            var fila = 0;
+            var columna = 0;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+
+    }//GEN-LAST:event_jText1Region1MouseClicked
+
+    private void jText2Region1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText2Region1MouseClicked
+        var campo = this.jText1Region1;
+        if (campo.isEditable()) {
+            var fila = 0;
+            var columna = 1;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText2Region1MouseClicked
+
+    private void jText3Region1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText3Region1MouseClicked
+        var campo = this.jText3Region1;
+
+        if (campo.isEditable()) {
+            var fila = 0;
+            var columna = 2;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText3Region1MouseClicked
+
+    private void jText4Region1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText4Region1MouseClicked
+        var campo = this.jText4Region1;
+
+        if (campo.isEditable()) {
+            var fila = 1;
+            var columna = 0;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText4Region1MouseClicked
+
+    private void jText5Region1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText5Region1MouseClicked
+        var campo = this.jText5Region1;
+
+        if (campo.isEditable()) {
+            var fila = 1;
+            var columna = 1;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText5Region1MouseClicked
+
+    private void jText6Region1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText6Region1MouseClicked
+        var campo = this.jText5Region1;
+
+        if (campo.isEditable()) {
+            var fila = 1;
+            var columna = 2;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText6Region1MouseClicked
+
+    private void jText7Region1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText7Region1MouseClicked
+        var campo = this.jText7Region1;
+
+        if (campo.isEditable()) {
+            var fila = 2;
+            var columna = 0;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText7Region1MouseClicked
+
+    private void jText8Region1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText8Region1MouseClicked
+        var campo = this.jText8Region1;
+
+        if (campo.isEditable()) {
+            var fila = 2;
+            var columna = 1;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText8Region1MouseClicked
+
+    private void jText9Region1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText9Region1MouseClicked
+        var campo = this.jText9Region1;
+
+        if (campo.isEditable()) {
+            var fila = 2;
+            var columna = 2;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText9Region1MouseClicked
+
+    private void jText1Region2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText1Region2MouseClicked
+        var campo = this.jText1Region2;
+
+        if (campo.isEditable()) {
+            var fila = 0;
+            var columna = 3;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText1Region2MouseClicked
+
+    private void jText2Region2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText2Region2MouseClicked
+        var campo = this.jText2Region2;
+
+        if (campo.isEditable()) {
+            var fila = 0;
+            var columna = 4;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText2Region2MouseClicked
+
+    private void jText3Region2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText3Region2MouseClicked
+        var campo = this.jText3Region2;
+
+        if (campo.isEditable()) {
+            var fila = 0;
+            var columna = 5;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText3Region2MouseClicked
+
+    private void jText4Region2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText4Region2MouseClicked
+        var campo = this.jText4Region2;
+
+        if (campo.isEditable()) {
+            var fila = 1;
+            var columna = 3;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText4Region2MouseClicked
+
+    private void jText5Region2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText5Region2MouseClicked
+        var campo = this.jText5Region2;
+
+        if (campo.isEditable()) {
+            var fila = 1;
+            var columna = 4;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText5Region2MouseClicked
+
+    private void jText6Region2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText6Region2MouseClicked
+        var campo = this.jText6Region2;
+
+        if (campo.isEditable()) {
+            var fila = 1;
+            var columna = 5;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText6Region2MouseClicked
+
+    private void jText7Region2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText7Region2MouseClicked
+        var campo = this.jText7Region2;
+
+        if (campo.isEditable()) {
+            var fila = 2;
+            var columna = 3;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText7Region2MouseClicked
+
+    private void jText8Region2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText8Region2MouseClicked
+        var campo = this.jText8Region2;
+
+        if (campo.isEditable()) {
+            var fila = 2;
+            var columna = 4;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText8Region2MouseClicked
+
+    private void jText9Region2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText9Region2MouseClicked
+        var campo = this.jText9Region2;
+
+        if (campo.isEditable()) {
+            var fila = 2;
+            var columna = 5;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText9Region2MouseClicked
+
+    private void jText1Region3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText1Region3MouseClicked
+        var campo = this.jText1Region3;
+
+        if (campo.isEditable()) {
+            var fila = 0;
+            var columna = 6;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText1Region3MouseClicked
+
+    private void jText2Region3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText2Region3MouseClicked
+        var campo = this.jText2Region3;
+
+        if (campo.isEditable()) {
+            var fila = 0;
+            var columna = 7;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText2Region3MouseClicked
+
+    private void jText3Region3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText3Region3MouseClicked
+        var campo = this.jText2Region3;
+
+        if (campo.isEditable()) {
+            var fila = 0;
+            var columna = 8;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText3Region3MouseClicked
+
+    private void jText4Region3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText4Region3MouseClicked
+        var campo = this.jText4Region3;
+
+        if (campo.isEditable()) {
+            var fila = 1;
+            var columna = 6;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText4Region3MouseClicked
+
+    private void jText5Region3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText5Region3MouseClicked
+        var campo = this.jText5Region3;
+
+        if (campo.isEditable()) {
+            var fila = 1;
+            var columna = 7;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText5Region3MouseClicked
+
+    private void jText6Region3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText6Region3MouseClicked
+        var campo = this.jText6Region3;
+
+        if (campo.isEditable()) {
+            var fila = 1;
+            var columna = 8;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText6Region3MouseClicked
+
+    private void jText7Region3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText7Region3MouseClicked
+        var campo = this.jText7Region3;
+
+        if (campo.isEditable()) {
+            var fila = 2;
+            var columna = 6;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText7Region3MouseClicked
+
+    private void jText8Region3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText8Region3MouseClicked
+        var campo = this.jText8Region3;
+
+        if (campo.isEditable()) {
+            var fila = 2;
+            var columna = 7;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText8Region3MouseClicked
+
+    private void jText9Region3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText9Region3MouseClicked
+        var campo = this.jText9Region3;
+
+        if (campo.isEditable()) {
+            var fila = 2;
+            var columna = 8;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText9Region3MouseClicked
+
+    private void jText1Region4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText1Region4MouseClicked
+        var campo = this.jText1Region4;
+
+        if (campo.isEditable()) {
+            var fila = 3;
+            var columna = 0;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText1Region4MouseClicked
+
+    private void jText2Region4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText2Region4MouseClicked
+        var campo = this.jText2Region4;
+
+        if (campo.isEditable()) {
+            var fila = 3;
+            var columna = 1;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText2Region4MouseClicked
+
+    private void jText3Region4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText3Region4MouseClicked
+        var campo = this.jText3Region4;
+
+        if (campo.isEditable()) {
+            var fila = 3;
+            var columna = 2;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText3Region4MouseClicked
+
+    private void jText4Region4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText4Region4MouseClicked
+        var campo = this.jText1Region4;
+
+        if (campo.isEditable()) {
+            var fila = 4;
+            var columna = 0;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText4Region4MouseClicked
+
+    private void jText7Region1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region1KeyTyped
+        //condicion para eliminar la accion digitada
+        if (!Character.isDigit(evt.getKeyChar()) || jText7Region1.getText().length() == 1 || evt.getKeyChar() == '0') {
+            evt.consume();
+        }
+
+        //condicion para almacer accion 
+        if (jText7Region1.getText().isEmpty()) {
+
+            if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
+
+                if (evaluarAccion(2, 0, "" + evt.getKeyChar())) {
+                    //                 TIPO ACCION - POSICION - VALOR
+                    almacenarHistorial("INGRESAR VALOR", 2, 0, "" + evt.getKeyChar());
+                    almacenarJugadaValida(this.jText7Region1, "" + evt.getKeyChar(), 2, 0);
+
+                } else {
+                    evt.consume();
+                }
+
+            }
+        }
+    }//GEN-LAST:event_jText7Region1KeyTyped
+
+    private void jText5Region4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText5Region4MouseClicked
+        var campo = this.jText5Region4;
+
+        if (campo.isEditable()) {
+            var fila = 3;
+            var columna = 1;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText5Region4MouseClicked
+
+    private void jText6Region4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText6Region4MouseClicked
+        var campo = this.jText6Region4;
+
+        if (campo.isEditable()) {
+            var fila = 3;
+            var columna = 2;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText6Region4MouseClicked
+
+    private void jText7Region4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText7Region4MouseClicked
+        var campo = this.jText7Region4;
+
+        if (campo.isEditable()) {
+            var fila = 4;
+            var columna = 0;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText7Region4MouseClicked
+
+    private void jText8Region4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText8Region4MouseClicked
+        var campo = this.jText8Region4;
+
+        if (campo.isEditable()) {
+            var fila = 4;
+            var columna = 1;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText8Region4MouseClicked
+
+    private void jText9Region4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText9Region4MouseClicked
+        var campo = this.jText9Region4;
+
+        if (campo.isEditable()) {
+            var fila = 4;
+            var columna = 2;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText9Region4MouseClicked
+
+    private void jText1Region5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText1Region5MouseClicked
+        var campo = this.jText1Region5;
+
+        if (campo.isEditable()) {
+            var fila = 3;
+            var columna = 3;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText1Region5MouseClicked
+
+    private void jText2Region5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText2Region5MouseClicked
+        var campo = this.jText2Region5;
+
+        if (campo.isEditable()) {
+            var fila = 3;
+            var columna = 4;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText2Region5MouseClicked
+
+    private void jText3Region5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText3Region5MouseClicked
+        var campo = this.jText3Region5;
+
+        if (campo.isEditable()) {
+            var fila = 3;
+            var columna = 5;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText3Region5MouseClicked
+
+    private void jText4Region5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText4Region5MouseClicked
+        var campo = this.jText4Region5;
+
+        if (campo.isEditable()) {
+            var fila = 4;
+            var columna = 3;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText4Region5MouseClicked
+
+    private void jText5Region5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText5Region5MouseClicked
+        var campo = this.jText5Region5;
+
+        if (campo.isEditable()) {
+            var fila = 4;
+            var columna = 4;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText5Region5MouseClicked
+
+    private void jText6Region5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText6Region5MouseClicked
+        var campo = this.jText6Region5;
+
+        if (campo.isEditable()) {
+            var fila = 4;
+            var columna = 5;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText6Region5MouseClicked
+
+    private void jText7Region5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText7Region5MouseClicked
+        var campo = this.jText7Region5;
+
+        if (campo.isEditable()) {
+            var fila = 5;
+            var columna = 3;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText7Region5MouseClicked
+
+    private void jText8Region5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText8Region5MouseClicked
+        var campo = this.jText8Region5;
+
+        if (campo.isEditable()) {
+            var fila = 5;
+            var columna = 4;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText8Region5MouseClicked
+
+    private void jText9Region5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText9Region5MouseClicked
+        var campo = this.jText8Region5;
+
+        if (campo.isEditable()) {
+            var fila = 5;
+            var columna = 5;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText9Region5MouseClicked
+
+    private void jText1Region6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText1Region6MouseClicked
+        var campo = this.jText1Region6;
+
+        if (campo.isEditable()) {
+            var fila = 3;
+            var columna = 6;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText1Region6MouseClicked
+
+    private void jText2Region6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText2Region6MouseClicked
+        var campo = this.jText2Region6;
+
+        if (campo.isEditable()) {
+            var fila = 3;
+            var columna = 7;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText2Region6MouseClicked
+
+    private void jText3Region6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText3Region6MouseClicked
+        var campo = this.jText3Region6;
+
+        if (campo.isEditable()) {
+            var fila = 3;
+            var columna = 8;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText3Region6MouseClicked
+
+    private void jText4Region6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText4Region6MouseClicked
+        var campo = this.jText4Region6;
+
+        if (campo.isEditable()) {
+            var fila = 4;
+            var columna = 6;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText4Region6MouseClicked
+
+    private void jText5Region6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText5Region6MouseClicked
+        var campo = this.jText5Region6;
+
+        if (campo.isEditable()) {
+            var fila = 4;
+            var columna = 7;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText5Region6MouseClicked
+
+    private void jText6Region6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText6Region6MouseClicked
+        var campo = this.jText6Region6;
+
+        if (campo.isEditable()) {
+            var fila = 4;
+            var columna = 8;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText6Region6MouseClicked
+
+    private void jText7Region6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText7Region6MouseClicked
+        var campo = this.jText7Region6;
+
+        if (campo.isEditable()) {
+            var fila = 5;
+            var columna = 6;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText7Region6MouseClicked
+
+    private void jText8Region6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText8Region6MouseClicked
+        var campo = this.jText8Region6;
+
+        if (campo.isEditable()) {
+            var fila = 5;
+            var columna = 7;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText8Region6MouseClicked
+
+    private void jText9Region6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText9Region6MouseClicked
+        var campo = this.jText9Region6;
+
+        if (campo.isEditable()) {
+            var fila = 5;
+            var columna = 8;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText9Region6MouseClicked
+
+    private void jText1Region7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText1Region7MouseClicked
+        var campo = this.jText1Region7;
+
+        if (campo.isEditable()) {
+            var fila = 6;
+            var columna = 0;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText1Region7MouseClicked
+
+    private void jText2Region7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText2Region7MouseClicked
+        var campo = this.jText2Region7;
+
+        if (campo.isEditable()) {
+            var fila = 6;
+            var columna = 1;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText2Region7MouseClicked
+
+    private void jText3Region7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText3Region7MouseClicked
+        var campo = this.jText3Region7;
+
+        if (campo.isEditable()) {
+            var fila = 6;
+            var columna = 2;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText3Region7MouseClicked
+
+    private void jText4Region7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText4Region7MouseClicked
+        var campo = this.jText4Region7;
+
+        if (campo.isEditable()) {
+            var fila = 7;
+            var columna = 0;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText4Region7MouseClicked
+
+    private void jText5Region7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText5Region7MouseClicked
+        var campo = this.jText5Region7;
+
+        if (campo.isEditable()) {
+            var fila = 7;
+            var columna = 1;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText5Region7MouseClicked
+
+    private void jText6Region7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText6Region7MouseClicked
+        var campo = this.jText6Region7;
+
+        if (campo.isEditable()) {
+            var fila = 7;
+            var columna = 2;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText6Region7MouseClicked
+
+    private void jText7Region7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText7Region7MouseClicked
+        var campo = this.jText7Region7;
+
+        if (campo.isEditable()) {
+            var fila = 8;
+            var columna = 0;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText7Region7MouseClicked
+
+    private void jText8Region7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText8Region7MouseClicked
+        var campo = this.jText8Region7;
+
+        if (campo.isEditable()) {
+            var fila = 8;
+            var columna = 1;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText8Region7MouseClicked
+
+    private void jText9Region7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText9Region7MouseClicked
+        var campo = this.jText8Region7;
+
+        if (campo.isEditable()) {
+            var fila = 8;
+            var columna = 2;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText9Region7MouseClicked
+
+    private void jText1Region8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText1Region8MouseClicked
+        var campo = this.jText1Region8;
+
+        if (campo.isEditable()) {
+            var fila = 6;
+            var columna = 3;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText1Region8MouseClicked
+
+    private void jText2Region8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText2Region8MouseClicked
+        var campo = this.jText2Region8;
+
+        if (campo.isEditable()) {
+            var fila = 6;
+            var columna = 4;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText2Region8MouseClicked
+
+    private void jText3Region8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText3Region8MouseClicked
+        var campo = this.jText3Region8;
+
+        if (campo.isEditable()) {
+            var fila = 6;
+            var columna = 5;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText3Region8MouseClicked
+
+    private void jText4Region8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText4Region8MouseClicked
+        var campo = this.jText4Region8;
+
+        if (campo.isEditable()) {
+            var fila = 7;
+            var columna = 3;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText4Region8MouseClicked
+
+    private void jText5Region8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText5Region8MouseClicked
+        var campo = this.jText5Region8;
+
+        if (campo.isEditable()) {
+            var fila = 7;
+            var columna = 4;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText5Region8MouseClicked
+
+    private void jText6Region8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText6Region8MouseClicked
+        var campo = this.jText6Region8;
+
+        if (campo.isEditable()) {
+            var fila = 7;
+            var columna = 5;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText6Region8MouseClicked
+
+    private void jText7Region8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText7Region8MouseClicked
+        var campo = this.jText7Region8;
+
+        if (campo.isEditable()) {
+            var fila = 8;
+            var columna = 3;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText7Region8MouseClicked
+
+    private void jText8Region8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText8Region8MouseClicked
+        var campo = this.jText8Region8;
+
+        if (campo.isEditable()) {
+            var fila = 8;
+            var columna = 4;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText8Region8MouseClicked
+
+    private void jText9Region8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText9Region8MouseClicked
+        var campo = this.jText9Region8;
+
+        if (campo.isEditable()) {
+            var fila = 8;
+            var columna = 5;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText9Region8MouseClicked
+
+    private void jText1Region9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText1Region9MouseClicked
+        var campo = this.jText1Region9;
+
+        if (campo.isEditable()) {
+            var fila = 6;
+            var columna = 6;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText1Region9MouseClicked
+
+    private void jText2Region9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText2Region9MouseClicked
+        var campo = this.jText2Region9;
+
+        if (campo.isEditable()) {
+            var fila = 6;
+            var columna = 7;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText2Region9MouseClicked
+
+    private void jText3Region9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText3Region9MouseClicked
+        var campo = this.jText3Region9;
+
+        if (campo.isEditable()) {
+            var fila = 6;
+            var columna = 8;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText3Region9MouseClicked
+
+    private void jText4Region9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText4Region9MouseClicked
+        var campo = this.jText4Region9;
+
+        if (campo.isEditable()) {
+            var fila = 7;
+            var columna = 6;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText4Region9MouseClicked
+
+    private void jText5Region9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText5Region9MouseClicked
+        var campo = this.jText5Region9;
+
+        if (campo.isEditable()) {
+            var fila = 7;
+            var columna = 7;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText5Region9MouseClicked
+
+    private void jText6Region9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText6Region9MouseClicked
+        var campo = this.jText6Region9;
+
+        if (campo.isEditable()) {
+            var fila = 7;
+            var columna = 8;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText6Region9MouseClicked
+
+    private void jText7Region9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText7Region9MouseClicked
+        var campo = this.jText7Region9;
+
+        if (campo.isEditable()) {
+            var fila = 8;
+            var columna = 6;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText7Region9MouseClicked
+
+    private void jText8Region9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText8Region9MouseClicked
+        var campo = this.jText8Region9;
+
+        if (campo.isEditable()) {
+            var fila = 8;
+            var columna = 7;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText8Region9MouseClicked
+
+    private void jText9Region9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jText9Region9MouseClicked
+        var campo = this.jText9Region9;
+
+        if (campo.isEditable()) {
+            var fila = 8;
+            var columna = 8;
+            Accion a = new Accion(campo, fila, columna);
+            this.jugadaSugerida = a;
+
+        }
+    }//GEN-LAST:event_jText9Region9MouseClicked
+
+    private void jText7Region1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region1KeyPressed
+        var valor = jText7Region1.getText();
+
+        if (jText7Region1.isEditable() && !jText7Region1.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(this.jText7Region1, 2, 0, valor);
+            }
+        }
+    }//GEN-LAST:event_jText7Region1KeyPressed
+
+    private void jText8Region1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region1KeyPressed
+        var valor = jText8Region1.getText();
+
+        if (jText8Region1.isEditable() && !jText8Region1.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(this.jText8Region1, 2, 1, valor);
+            }
+        }
+    }//GEN-LAST:event_jText8Region1KeyPressed
+
+    private void jText9Region1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region1KeyPressed
+        var valor = jText9Region1.getText();
+
+        if (jText9Region1.isEditable() && !jText9Region1.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(this.jText9Region1, 2, 2, valor);
+            }
+        }
+    }//GEN-LAST:event_jText9Region1KeyPressed
+
+    private void jText1Region2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText1Region2KeyPressed
+        var valor = jText1Region2.getText();
+
+        if (jText1Region2.isEditable() && !jText1Region2.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(this.jText1Region2, 0, 3, valor);
+            }
+        }
+    }//GEN-LAST:event_jText1Region2KeyPressed
+
+    private void jText2Region2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText2Region2KeyPressed
+        var valor = jText2Region2.getText();
+
+        if (jText2Region2.isEditable() && !jText2Region2.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(this.jText2Region2, 0, 4, valor);
+            }
+        }
+    }//GEN-LAST:event_jText2Region2KeyPressed
+
+    private void jText3Region2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText3Region2KeyPressed
+        var valor = jText3Region2.getText();
+
+        if (jText3Region2.isEditable() && !jText3Region2.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(this.jText3Region2, 0, 5, valor);
+            }
+        }
+    }//GEN-LAST:event_jText3Region2KeyPressed
+
+    private void jText4Region2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText4Region2KeyPressed
+        var valor = jText4Region2.getText();
+
+        if (jText4Region2.isEditable() && !jText4Region2.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(this.jText4Region2, 1, 3, valor);
+            }
+        }
+    }//GEN-LAST:event_jText4Region2KeyPressed
+
+    private void jText5Region2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText5Region2KeyPressed
+        var valor = jText5Region2.getText();
+
+        if (jText5Region2.isEditable() && !jText5Region2.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(this.jText5Region2, 1, 4, valor);
+            }
+        }
+    }//GEN-LAST:event_jText5Region2KeyPressed
+
+    private void jText6Region2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region2KeyPressed
+        var valor = jText6Region2.getText();
+
+        if (jText6Region2.isEditable() && !jText6Region2.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(this.jText6Region2, 1, 5, valor);
+            }
+        }
+    }//GEN-LAST:event_jText6Region2KeyPressed
+
+    private void jText7Region2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region2KeyPressed
+        var valor = jText7Region2.getText();
+
+        if (jText7Region2.isEditable() && !jText7Region2.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(this.jText7Region2, 2, 3, valor);
+            }
+        }
+    }//GEN-LAST:event_jText7Region2KeyPressed
+
+    private void jText8Region2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region2KeyPressed
+        var valor = jText8Region2.getText();
+
+        if (jText8Region2.isEditable() && !jText8Region2.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(this.jText7Region2, 2, 4, valor);
+            }
+        }
+    }//GEN-LAST:event_jText8Region2KeyPressed
+
+    private void jText9Region2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region2KeyPressed
+        var valor = jText9Region2.getText();
+
+        if (jText9Region2.isEditable() && !jText9Region2.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(this.jText9Region2, 2, 5, valor);
+            }
+        }
+    }//GEN-LAST:event_jText9Region2KeyPressed
+
+    private void jText1Region3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText1Region3KeyPressed
+        var valor = jText1Region3.getText();
+
+        if (jText1Region3.isEditable() && !jText1Region3.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(this.jText1Region3, 0, 6, valor);
+            }
+        }
+    }//GEN-LAST:event_jText1Region3KeyPressed
+
+    private void jText2Region3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText2Region3KeyPressed
+        var valor = jText2Region3.getText();
+
+        if (jText2Region3.isEditable() && !jText2Region3.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(this.jText2Region3, 0, 7, valor);
+            }
+        }
+    }//GEN-LAST:event_jText2Region3KeyPressed
+
+    private void jText3Region3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText3Region3KeyPressed
+        var valor = jText3Region3.getText();
+
+        if (jText3Region3.isEditable() && !jText3Region3.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(this.jText3Region3, 0, 8, valor);
+            }
+        }
+    }//GEN-LAST:event_jText3Region3KeyPressed
+
+    private void jText4Region3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText4Region3KeyPressed
+        var campo = this.jText4Region3;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 1, 6, valor);
+            }
+        }
+    }//GEN-LAST:event_jText4Region3KeyPressed
+
+    private void jText5Region3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText5Region3KeyPressed
+        var campo = this.jText5Region3;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 1, 7, valor);
+            }
+        }
+    }//GEN-LAST:event_jText5Region3KeyPressed
+
+    private void jText6Region3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region3KeyPressed
+        var campo = this.jText6Region3;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 1, 8, valor);
+            }
+        }
+    }//GEN-LAST:event_jText6Region3KeyPressed
+
+    private void jText7Region3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region3KeyPressed
+        var campo = this.jText7Region3;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 2, 6, valor);
+            }
+        }
+    }//GEN-LAST:event_jText7Region3KeyPressed
+
+    private void jText8Region3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region3KeyPressed
+        var campo = this.jText8Region3;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 2, 7, valor);
+            }
+        }
+    }//GEN-LAST:event_jText8Region3KeyPressed
+
+    private void jText1Region4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText1Region4KeyPressed
+        var campo = this.jText1Region4;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 3, 0, valor);
+            }
+        }
+    }//GEN-LAST:event_jText1Region4KeyPressed
+
+    private void jText2Region4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText2Region4KeyPressed
+        var campo = this.jText2Region4;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 3, 1, valor);
+            }
+        }
+    }//GEN-LAST:event_jText2Region4KeyPressed
+
+    private void jText3Region4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText3Region4KeyPressed
+        var campo = this.jText3Region4;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 3, 2, valor);
+            }
+        }
+    }//GEN-LAST:event_jText3Region4KeyPressed
+
+    private void jText4Region4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText4Region4KeyPressed
+        var campo = this.jText4Region4;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 4, 0, valor);
+            }
+        }
+    }//GEN-LAST:event_jText4Region4KeyPressed
+
+    private void jText5Region4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText5Region4KeyPressed
+        var campo = this.jText5Region4;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 4, 1, valor);
+            }
+        }
+    }//GEN-LAST:event_jText5Region4KeyPressed
+
+    private void jText6Region4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region4KeyPressed
+        var campo = this.jText6Region4;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 4, 2, valor);
+            }
+        }
+    }//GEN-LAST:event_jText6Region4KeyPressed
+
+    private void jText7Region4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region4KeyPressed
+        var campo = this.jText7Region4;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 5, 0, valor);
+            }
+        }
+    }//GEN-LAST:event_jText7Region4KeyPressed
+
+    private void jText8Region4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region4KeyPressed
+        var campo = this.jText8Region4;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 5, 1, valor);
+            }
+        }
+    }//GEN-LAST:event_jText8Region4KeyPressed
+
+    private void jText9Region4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region4KeyPressed
+        var campo = this.jText9Region4;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 5, 2, valor);
+            }
+        }
+    }//GEN-LAST:event_jText9Region4KeyPressed
+
+    private void jText1Region5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText1Region5KeyPressed
+        var campo = this.jText1Region5;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 3, 3, valor);
+            }
+        }
+    }//GEN-LAST:event_jText1Region5KeyPressed
+
+    private void jText2Region5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText2Region5KeyPressed
+        var campo = this.jText2Region5;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 3, 4, valor);
+            }
+        }
+    }//GEN-LAST:event_jText2Region5KeyPressed
+
+    private void jText3Region5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText3Region5KeyPressed
+        var campo = this.jText3Region5;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 3, 5, valor);
+            }
+        }
+    }//GEN-LAST:event_jText3Region5KeyPressed
+
+    private void jText4Region5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText4Region5KeyPressed
+        var campo = this.jText4Region5;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 4, 3, valor);
+            }
+        }
+    }//GEN-LAST:event_jText4Region5KeyPressed
+
+    private void jText5Region5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText5Region5KeyPressed
+        var campo = this.jText5Region5;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 4, 4, valor);
+            }
+        }
+    }//GEN-LAST:event_jText5Region5KeyPressed
+
+    private void jText6Region5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region5KeyPressed
+        var campo = this.jText6Region5;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 4, 5, valor);
+            }
+        }
+    }//GEN-LAST:event_jText6Region5KeyPressed
+
+    private void jText7Region5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region5KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText7Region5KeyPressed
+
+    private void jText8Region5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region5KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText8Region5KeyPressed
+
+    private void jText9Region5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region5KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText9Region5KeyPressed
+
+    private void jText1Region6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText1Region6KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText1Region6KeyPressed
+
+    private void jText2Region6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText2Region6KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText2Region6KeyPressed
+
+    private void jText3Region6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText3Region6KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText3Region6KeyPressed
+
+    private void jText4Region6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText4Region6KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText4Region6KeyPressed
+
+    private void jText5Region6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText5Region6KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText5Region6KeyPressed
+
+    private void jText6Region6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region6KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText6Region6KeyPressed
+
+    private void jText7Region6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region6KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText7Region6KeyPressed
+
+    private void jText8Region6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region6KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText8Region6KeyPressed
+
+    private void jText9Region6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region6KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText9Region6KeyPressed
+
+    private void jText1Region7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText1Region7KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText1Region7KeyPressed
+
+    private void jText2Region7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText2Region7KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText2Region7KeyPressed
+
+    private void jText3Region7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText3Region7KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText3Region7KeyPressed
+
+    private void jText4Region7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText4Region7KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText4Region7KeyPressed
+
+    private void jText5Region7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText5Region7KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText5Region7KeyPressed
+
+    private void jText6Region7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region7KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText6Region7KeyPressed
+
+    private void jText7Region7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region7KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText7Region7KeyPressed
+
+    private void jText8Region7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region7KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText8Region7KeyPressed
+
+    private void jText9Region7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region7KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText9Region7KeyPressed
+
+    private void jText1Region8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText1Region8KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText1Region8KeyPressed
+
+    private void jText2Region8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText2Region8KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText2Region8KeyPressed
+
+    private void jText3Region8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText3Region8KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText3Region8KeyPressed
+
+    private void jText4Region8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText4Region8KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText4Region8KeyPressed
+
+    private void jText5Region8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText5Region8KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText5Region8KeyPressed
+
+    private void jText6Region8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region8KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText6Region8KeyPressed
+
+    private void jText7Region8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region8KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText7Region8KeyPressed
+
+    private void jText8Region8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region8KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText8Region8KeyPressed
+
+    private void jText9Region8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region8KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText9Region8KeyPressed
+
+    private void jText1Region9KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText1Region9KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText1Region9KeyPressed
+
+    private void jText2Region9KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText2Region9KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText2Region9KeyPressed
+
+    private void jText3Region9KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText3Region9KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText3Region9KeyPressed
+
+    private void jText4Region9KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText4Region9KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText4Region9KeyPressed
+
+    private void jText5Region9KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText5Region9KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText5Region9KeyPressed
+
+    private void jText6Region9KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region9KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText6Region9KeyPressed
+
+    private void jText7Region9KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region9KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText7Region9KeyPressed
+
+    private void jText8Region9KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region9KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText8Region9KeyPressed
+
+    private void jText9Region9KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region9KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText9Region9KeyPressed
+
+    private void jText9Region3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region3KeyPressed
+        var campo = this.jText9Region3;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 2, 8, valor);
+            }
+        }
+    }//GEN-LAST:event_jText9Region3KeyPressed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(Sudoku.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(Sudoku.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(Sudoku.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(Sudoku.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Sudoku().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonComprobar;
     private javax.swing.JButton jButtonDeshacer;
+    private javax.swing.JButton jButtonPista;
     private javax.swing.JButton jButtonRehacer;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JButton jButtonVerJugadas;
@@ -4627,7 +6754,19 @@ public class Sudoku extends javax.swing.JFrame {
     private void verificarPartida() {
         if (partidaCompleta()) {
 
-            JOptionPane.showMessageDialog(rootPane, "Felicitiaciones has terminado el sudoku con exito!", "Felicitaciones", JOptionPane.INFORMATION_MESSAGE);
+            int opc = JOptionPane.showConfirmDialog(rootPane, "Felicitiaciones has terminado el sudoku con exito!\n"
+                    + "¿Desear intentarlo de nuevo?", "Felicitaciones", JOptionPane.YES_NO_OPTION);
+
+            if (opc == JOptionPane.YES_OPTION) {
+
+                this.dispose();
+                new Sudoku().setVisible(true);
+
+            } else {
+
+                this.dispose();
+                new Menu().setVisible(true);
+            }
 
         } else {
             System.out.println("no has terminado la partida");
@@ -4638,13 +6777,13 @@ public class Sudoku extends javax.swing.JFrame {
 
         System.out.println("VERIFICANDO PARTIDA");
         for (int f = 0; f < sudokuPartida.length; f++) {
-           
+
             for (int c = 0; c < sudokuPartida[0].length; c++) {
                 System.out.println(""
-                        + "sudoku partida :[" + f + "]" + "[" + c + "]="+sudokuPartida[f][c]
-                        +" Es igual?: "
-                        + "sudoku respuesta :[" + f + "]" + "[" + c + "]="+sudokuRespuesta[f][c]
-                        );
+                        + "sudoku partida :[" + f + "]" + "[" + c + "]=" + sudokuPartida[f][c]
+                        + " Es igual?: "
+                        + "sudoku respuesta :[" + f + "]" + "[" + c + "]=" + sudokuRespuesta[f][c]
+                );
                 if (!sudokuPartida[f][c].equals(sudokuRespuesta[f][c])) {
                     return false;
                 }
@@ -4702,6 +6841,13 @@ public class Sudoku extends javax.swing.JFrame {
 //                + ": " + rehacer.peek().getColumna());
 
         sudokuPartida[f][c] = "";
+
+    }
+
+    private void sugerirJugada() {
+
+        var valor = sudokuRespuesta[jugadaSugerida.getFila()][jugadaSugerida.getColumna()];
+        JOptionPane.showMessageDialog(rootPane, "Jugada sugerida: " + valor, "Pista", JOptionPane.INFORMATION_MESSAGE);
 
     }
 

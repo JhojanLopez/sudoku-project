@@ -28,6 +28,14 @@ public class Accion {
         this.columna = columna;
     }
 
+    public Accion(JTextField campo, int fila, int columna) {
+        this.campo = campo;
+        this.fila = fila;
+        this.columna = columna;
+    }
+
+   
+    
     
     public JTextField getCampo() {
         return campo;
