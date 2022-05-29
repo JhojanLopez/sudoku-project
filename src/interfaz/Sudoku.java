@@ -245,6 +245,9 @@ public class Sudoku extends javax.swing.JFrame {
         jText4Region1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText4Region1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jText4Region1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText4Region1KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText4Region1KeyTyped(evt);
             }
@@ -254,6 +257,9 @@ public class Sudoku extends javax.swing.JFrame {
         jText5Region1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText5Region1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jText5Region1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText5Region1KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText5Region1KeyTyped(evt);
             }
@@ -263,6 +269,9 @@ public class Sudoku extends javax.swing.JFrame {
         jText6Region1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jText6Region1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jText6Region1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jText6Region1KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jText6Region1KeyTyped(evt);
             }
@@ -3509,6 +3518,38 @@ public class Sudoku extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jText3Region1KeyPressed
+
+    private void jText4Region1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText4Region1KeyPressed
+        var valor = jText4Region1.getText();
+
+        if (jText4Region1.isEditable() && !jText4Region1.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(this.jText4Region1, 1, 0, valor);
+            }
+        }
+    }//GEN-LAST:event_jText4Region1KeyPressed
+
+    private void jText5Region1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText5Region1KeyPressed
+        // TODO add your handling code here:
+        var valor = jText5Region1.getText();
+
+        if (jText5Region1.isEditable() && !jText5Region1.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(this.jText5Region1, 1, 1, valor);
+            }
+        }
+    }//GEN-LAST:event_jText5Region1KeyPressed
+
+    private void jText6Region1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region1KeyPressed
+        // TODO add your handling code here:
+        var valor = jText6Region1.getText();
+
+        if (jText6Region1.isEditable() && !jText6Region1.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(this.jText6Region1, 1, 0, valor);
+            }
+        }
+    }//GEN-LAST:event_jText6Region1KeyPressed
 
     /**
      * @param args the command line arguments
