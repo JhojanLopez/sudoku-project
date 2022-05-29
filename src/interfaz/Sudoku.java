@@ -4,6 +4,7 @@
  */
 package interfaz;
 
+import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -27,6 +28,7 @@ public class Sudoku extends javax.swing.JFrame {
     private Stack<Accion> deshacer;
     private Stack<Accion> rehacer;
     private String sudokuPartida[][];
+    private String sudokuRespuesta[][];
     private List<String> historial;
 
     public Sudoku() {
@@ -35,9 +37,11 @@ public class Sudoku extends javax.swing.JFrame {
         this.deshacer = new Stack<Accion>();
         this.rehacer = new Stack<Accion>();
         this.sudokuPartida = new String[9][9];
+        this.sudokuRespuesta = new String[9][9];
         this.historial = new ArrayList<String>();
         initComponents();
         establecerPartida();
+        establecerRespuesta();
     }
 
     /**
@@ -1494,6 +1498,11 @@ public class Sudoku extends javax.swing.JFrame {
         //condicion para eliminar la accion digitada
         if (!Character.isDigit(evt.getKeyChar()) || jText2Region1.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
+        }
+        
+        if(evt.getKeyCode()==KeyEvent.VK_BACK_SPACE){
+            System.out.println("esta oprimiendo retroceso");
+        
         }
 
         //condicion para almacer accion 
@@ -3314,7 +3323,7 @@ public class Sudoku extends javax.swing.JFrame {
     }//GEN-LAST:event_jText5Region9KeyTyped
 
     private void jText6Region9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region9KeyTyped
-       //condicion para elimiar la accion digitada
+        //condicion para elimiar la accion digitada
         if (!Character.isDigit(evt.getKeyChar()) || jText6Region9.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
@@ -3348,10 +3357,10 @@ public class Sudoku extends javax.swing.JFrame {
 
             if (Character.isDigit(evt.getKeyChar()) && evt.getKeyChar() != '0') {//almacenamos en la pila la accion que se realice
 
-                if (evaluarAccion(8,6, "" + evt.getKeyChar())) {
+                if (evaluarAccion(8, 6, "" + evt.getKeyChar())) {
                     //                 TIPO ACCION - POSICION - VALOR
                     almacenarHistorial("INGRESAR VALOR", 8, 6, "" + evt.getKeyChar());
-                    almacenarJugadaValida(this.jText7Region9, "" + evt.getKeyChar(), 8,6);
+                    almacenarJugadaValida(this.jText7Region9, "" + evt.getKeyChar(), 8, 6);
 
                 } else {
                     evt.consume();
@@ -3362,7 +3371,7 @@ public class Sudoku extends javax.swing.JFrame {
     }//GEN-LAST:event_jText7Region9KeyTyped
 
     private void jText8Region9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region9KeyTyped
-         //condicion para elimiar la accion digitada
+        //condicion para elimiar la accion digitada
         if (!Character.isDigit(evt.getKeyChar()) || jText8Region9.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
@@ -3386,7 +3395,7 @@ public class Sudoku extends javax.swing.JFrame {
     }//GEN-LAST:event_jText8Region9KeyTyped
 
     private void jText9Region9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region9KeyTyped
-         //condicion para elimiar la accion digitada
+        //condicion para elimiar la accion digitada
         if (!Character.isDigit(evt.getKeyChar()) || jText9Region9.getText().length() == 1 || evt.getKeyChar() == '0') {
             evt.consume();
         }
@@ -4528,6 +4537,62 @@ public class Sudoku extends javax.swing.JFrame {
     }
 
     private void verificarPartida() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (partidaCompleta()) {
+
+            JOptionPane.showMessageDialog(rootPane, "Felicitiaciones has terminado el sudoku con exito!", "Felicitaciones", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            System.out.println("no has terminado la partida");
+        }
     }
+
+    private boolean partidaCompleta() {
+
+        for (int f = 0; f < sudokuPartida.length; f++) {
+            for (int c = 0; c < sudokuPartida[0].length; c++) {
+                if (!sudokuPartida[f][c].equals(sudokuRespuesta[f][c])) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    private void establecerRespuesta() {
+        var respuesta = obtenerRespuesta();//obtenemos una lista con la respuesta
+
+        if (respuesta != null) {
+
+            for (int f = 0; f < sudokuRespuesta.length; f++) {
+                for (int c = 0; c < sudokuRespuesta[0].length; c++) {
+                    sudokuRespuesta[f][c] = "" + respuesta.get(f).charAt(c);
+                }
+            }
+
+        }
+    }
+
+    private List<String> obtenerRespuesta() {
+
+        var respuesta = new ArrayList<String>();
+        File archivo = new File(archivoRespuesta);
+        try {
+            BufferedReader entrada = new BufferedReader(new FileReader(archivo));
+            String lectura = entrada.readLine();
+            while (lectura != null) {
+                System.out.println("lectura = " + lectura);
+                respuesta.add(lectura);
+                lectura = entrada.readLine();
+
+            }
+            entrada.close();
+            return respuesta;
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace(System.out);
+        } catch (IOException ex) {
+            ex.printStackTrace(System.out);
+        }
+
+        return null;
+    }
+
 }
