@@ -5545,106 +5545,314 @@ public class Sudoku extends javax.swing.JFrame {
 
     private void jText7Region5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region5KeyPressed
         // TODO add your handling code here:
+        var campo = this.jText7Region5;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 5,3, valor);
+            }
+        }
     }//GEN-LAST:event_jText7Region5KeyPressed
 
     private void jText8Region5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region5KeyPressed
         // TODO add your handling code here:
+         var campo = this.jText8Region5;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 5,4, valor);
+            }
+        }
     }//GEN-LAST:event_jText8Region5KeyPressed
 
     private void jText9Region5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region5KeyPressed
         // TODO add your handling code here:
+         var campo = this.jText9Region5;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 5,5, valor);
+            }
+        }
     }//GEN-LAST:event_jText9Region5KeyPressed
 
     private void jText1Region6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText1Region6KeyPressed
         // TODO add your handling code here:
+         var campo = this.jText1Region6;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 3,6, valor);
+            }
+        }
     }//GEN-LAST:event_jText1Region6KeyPressed
 
     private void jText2Region6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText2Region6KeyPressed
         // TODO add your handling code here:
+          var campo = this.jText2Region6;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 3,7, valor);
+            }
+        }
     }//GEN-LAST:event_jText2Region6KeyPressed
 
     private void jText3Region6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText3Region6KeyPressed
         // TODO add your handling code here:
+          var campo = this.jText3Region6;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 3,8, valor);
+            }
+        }
     }//GEN-LAST:event_jText3Region6KeyPressed
 
     private void jText4Region6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText4Region6KeyPressed
         // TODO add your handling code here:
+          var campo = this.jText4Region6;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 4,6, valor);
+            }
+        }
     }//GEN-LAST:event_jText4Region6KeyPressed
 
     private void jText5Region6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText5Region6KeyPressed
         // TODO add your handling code here:
+          var campo = this.jText5Region6;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 4,7, valor);
+            }
+        }
     }//GEN-LAST:event_jText5Region6KeyPressed
 
     private void jText6Region6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region6KeyPressed
         // TODO add your handling code here:
+          var campo = this.jText6Region6;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 4,8, valor);
+            }
+        }
     }//GEN-LAST:event_jText6Region6KeyPressed
 
     private void jText7Region6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region6KeyPressed
         // TODO add your handling code here:
+          var campo = this.jText7Region6;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 5,6, valor);
+            }
+        }
     }//GEN-LAST:event_jText7Region6KeyPressed
 
     private void jText8Region6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region6KeyPressed
         // TODO add your handling code here:
+          var campo = this.jText8Region6;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 5,7, valor);
+            }
+        }
     }//GEN-LAST:event_jText8Region6KeyPressed
 
     private void jText9Region6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region6KeyPressed
         // TODO add your handling code here:
+          var campo = this.jText9Region6;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 5,8, valor);
+            }
+        }
     }//GEN-LAST:event_jText9Region6KeyPressed
 
     private void jText1Region7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText1Region7KeyPressed
         // TODO add your handling code here:
+          var campo = this.jText1Region7;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 6,0, valor);
+            }
+        }
     }//GEN-LAST:event_jText1Region7KeyPressed
 
     private void jText2Region7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText2Region7KeyPressed
         // TODO add your handling code here:
+        var campo = this.jText2Region7;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 6,1, valor);
+            }
+        }
     }//GEN-LAST:event_jText2Region7KeyPressed
 
     private void jText3Region7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText3Region7KeyPressed
         // TODO add your handling code here:
+        var campo = this.jText3Region7;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 6,2, valor);
+            }
+        }
     }//GEN-LAST:event_jText3Region7KeyPressed
 
     private void jText4Region7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText4Region7KeyPressed
         // TODO add your handling code here:
+        var campo = this.jText4Region7;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 7,0, valor);
+            }
+        }
     }//GEN-LAST:event_jText4Region7KeyPressed
 
     private void jText5Region7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText5Region7KeyPressed
         // TODO add your handling code here:
+        var campo = this.jText5Region7;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 7,1, valor);
+            }
+        }
     }//GEN-LAST:event_jText5Region7KeyPressed
 
     private void jText6Region7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region7KeyPressed
         // TODO add your handling code here:
+        var campo = this.jText6Region7;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 7,2, valor);
+            }
+        }
     }//GEN-LAST:event_jText6Region7KeyPressed
 
     private void jText7Region7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText7Region7KeyPressed
         // TODO add your handling code here:
+        var campo = this.jText7Region7;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 8,0, valor);
+            }
+        }
     }//GEN-LAST:event_jText7Region7KeyPressed
 
     private void jText8Region7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText8Region7KeyPressed
         // TODO add your handling code here:
+        var campo = this.jText8Region7;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 8,1, valor);
+            }
+        }
     }//GEN-LAST:event_jText8Region7KeyPressed
 
     private void jText9Region7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText9Region7KeyPressed
         // TODO add your handling code here:
+        var campo = this.jText9Region7;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 8,2, valor);
+            }
+        }
     }//GEN-LAST:event_jText9Region7KeyPressed
 
     private void jText1Region8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText1Region8KeyPressed
         // TODO add your handling code here:
+        var campo = this.jText1Region8;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 6,3, valor);
+            }
+        }
     }//GEN-LAST:event_jText1Region8KeyPressed
 
     private void jText2Region8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText2Region8KeyPressed
         // TODO add your handling code here:
+         var campo = this.jText2Region8;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 6,4, valor);
+            }
+        }
     }//GEN-LAST:event_jText2Region8KeyPressed
 
     private void jText3Region8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText3Region8KeyPressed
         // TODO add your handling code here:
+         var campo = this.jText3Region8;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 6,5, valor);
+            }
+        }
     }//GEN-LAST:event_jText3Region8KeyPressed
 
     private void jText4Region8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText4Region8KeyPressed
         // TODO add your handling code here:
+         var campo = this.jText4Region8;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 7,3, valor);
+            }
+        }
     }//GEN-LAST:event_jText4Region8KeyPressed
 
     private void jText5Region8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText5Region8KeyPressed
         // TODO add your handling code here:
+         var campo = this.jText5Region8;
+        var valor = campo.getText();
+
+        if (campo.isEditable() && !campo.getText().isEmpty()) {
+            if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                eliminarJugadaSudokuPartida(campo, 7,4, valor);
+            }
+        }
     }//GEN-LAST:event_jText5Region8KeyPressed
 
     private void jText6Region8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jText6Region8KeyPressed
